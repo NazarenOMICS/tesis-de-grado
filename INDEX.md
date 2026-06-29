@@ -1,6 +1,6 @@
 ---
 tipo: indice
-version: 1.0
+version: 1.1
 fecha: 2026-06-29
 ---
 
@@ -13,6 +13,12 @@ Antes de abrir cualquier otro archivo, consultá este índice para saber qué ex
 
 Las carpetas `legacy/` dentro de cada sección contienen PDFs originales que NO se leen
 en operación normal. Solo se abren bajo pedido explícito para resolver discrepancias puntuales.
+
+Nota de versión (Fase 2, 2026-06-29): los seis resúmenes MD de `normativa/` fueron reescritos
+en versión densa y accionable (alcance, reglas accionables numeradas, números y formatos exactos,
+ambigüedades) verificando contra los PDFs de `normativa/legacy/`. Reemplazan a los resúmenes
+comprimidos de Codex. Precedencia normativa: el Documento 302-BI prevalece en conflicto,
+en particular frente al Documento 303-BI.
 
 Estados posibles de un archivo de datos o análisis:
 - estado_dato: crudo (generado, sin procesar) o analizado (con resultado interpretable)
@@ -92,12 +98,4 @@ Estados posibles de un archivo de datos o análisis:
 | experimentos/OE2_validacion_DIA/protocolo_fasp_stagetips_copia.md | experimentos/OE2_validacion_DIA/legacy/protocolo_fasp_stagetips_copia.pdf |
 | recursos/tutorial_patternlab_v.md | recursos/legacy/tutorial_patternlab_v.pdf |
 | recursos/obligatorio_bioinformatica_1.md | recursos/legacy/obligatorio_bioinformatica_1.pdf |
-| analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.md | analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.pdf |
-| analisis/Analisis Rstudio/figura_2b_pairwise_estilo.md | analisis/Analisis Rstudio/figura_2b_pairwise_estilo.pdf |
-
-## Pendientes derivados
-
-- AGENTS.md: pendiente (Claude, Fase 7 de su prompt).
-- INDEX_corpus_obsidian.md: pendiente (Claude, Fase 8 de su prompt).
-- Análisis formal de IC50/MIC en GraphPad: pendiente de consolidar contra los archivos Prism.
-- Adquisición DIA: no iniciada.
+| analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.md | analisis/Analisis Rstudio/figura_2
