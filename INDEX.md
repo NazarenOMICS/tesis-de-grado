@@ -65,11 +65,39 @@ Estados posibles de un archivo de datos o análisis:
 | discusion/ | no iniciado | |
 | conclusiones/ | no iniciado | |
 
+## Resúmenes PDF operativos
+
+| Resumen MD | PDF original |
+|------------|--------------|
+| normativa/documento_302_bi_normas_presentacion_tfdc.md | normativa/legacy/documento_302_bi_normas_presentacion_tfdc.pdf |
+| normativa/documento_303_bi_hoja_verificacion.md | normativa/legacy/documento_303_bi_hoja_verificacion.pdf |
+| normativa/documento_304_desarrollo_tfdc.md | normativa/legacy/documento_304_desarrollo_tfdc.pdf |
+| normativa/documento_305_guia_tutores.md | normativa/legacy/documento_305_guia_tutores.pdf |
+| normativa/documento_306_titulos_abstracts_correccion.md | normativa/legacy/documento_306_titulos_abstracts_correccion.pdf |
+| normativa/guia_tesis_biotecnologia_2023.md | normativa/legacy/guia_tesis_biotecnologia_2023.pdf |
+| proyecto/anteproyecto_tfdc_nazareno_cabrera.md | proyecto/legacy/anteproyecto_tfdc_nazareno_cabrera.pdf |
+| pasantia/informe_pasantia_perfil_termico_proteoma.md | pasantia/legacy/informe_pasantia_perfil_termico_proteoma.pdf |
+| bibliografia/stuart_beyond_inhibition_rifampicin_mycobacteria.md | bibliografia/legacy/stuart_beyond_inhibition_rifampicin_mycobacteria.pdf |
+| bibliografia/frey2025_dia_cqe_lfq.md | bibliografia/legacy/frey2025_dia_cqe_lfq.pdf |
+| bibliografia/frey2025_dia_cqe_lfq_copia_setup.md | bibliografia/legacy/frey2025_dia_cqe_lfq_copia_setup.pdf |
+| experimentos/protocolo_azalea_soluciones_cultivo_proteinas.md | experimentos/legacy/protocolo_azalea_soluciones_cultivo_proteinas.pdf |
+| experimentos/manual_amersham_lmw_sds.md | experimentos/legacy/manual_amersham_lmw_sds.pdf |
+| experimentos/protocolo_crecimiento_corynebacterium.md | experimentos/legacy/protocolo_crecimiento_corynebacterium.pdf |
+| experimentos/OE1_MIC_IC50/protocolo_mic_ic50_emb_v6.md | experimentos/OE1_MIC_IC50/legacy/protocolo_mic_ic50_emb_v6.pdf |
+| experimentos/OE1_MIC_IC50/protocolo_od600_emb_2026_04_22.md | experimentos/OE1_MIC_IC50/legacy/protocolo_od600_emb_2026_04_22.pdf |
+| experimentos/OE1_MIC_IC50/protocolo_od600_emb_v4_2026_05_13.md | experimentos/OE1_MIC_IC50/legacy/protocolo_od600_emb_v4_2026_05_13.pdf |
+| experimentos/OE1_MIC_IC50/MIC/MIC Final Analisis/informe_metodologico_mic_emb_final.md | experimentos/OE1_MIC_IC50/MIC/MIC Final Analisis/informe_metodologico_mic_emb_final.pdf |
+| experimentos/OE2_validacion_DIA/protocolo_fasp_stagetips_ubypa.md | experimentos/OE2_validacion_DIA/legacy/protocolo_fasp_stagetips_ubypa.pdf |
+| experimentos/OE2_validacion_DIA/protocolo_extraccion_proteinas_celulares.md | experimentos/OE2_validacion_DIA/legacy/protocolo_extraccion_proteinas_celulares.pdf |
+| experimentos/OE2_validacion_DIA/protocolo_fasp_stagetips_copia.md | experimentos/OE2_validacion_DIA/legacy/protocolo_fasp_stagetips_copia.pdf |
+| recursos/tutorial_patternlab_v.md | recursos/legacy/tutorial_patternlab_v.pdf |
+| recursos/obligatorio_bioinformatica_1.md | recursos/legacy/obligatorio_bioinformatica_1.pdf |
+| analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.md | analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.pdf |
+| analisis/Analisis Rstudio/figura_2b_pairwise_estilo.md | analisis/Analisis Rstudio/figura_2b_pairwise_estilo.pdf |
+
 ## Pendientes derivados
 
-- Todos los resúmenes MD de normativa ORT: pendiente (Claude, Fase 2 de su prompt).
-- Resumen del informe de pasantía: pendiente (Claude, Fase 3 de su prompt).
 - AGENTS.md: pendiente (Claude, Fase 7 de su prompt).
 - INDEX_corpus_obsidian.md: pendiente (Claude, Fase 8 de su prompt).
-- Análisis formal de IC50/MIC en GraphPad: pendiente de recuperar de otra computadora.
+- Análisis formal de IC50/MIC en GraphPad: pendiente de consolidar contra los archivos Prism.
 - Adquisición DIA: no iniciada.
