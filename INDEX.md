@@ -1,6 +1,6 @@
 ---
 tipo: indice
-version: 1.5
+version: 1.6
 fecha: 2026-06-29
 ---
 
@@ -28,7 +28,9 @@ operativo 2 ug/mL en CGXII-sacarosa; réplica 3 excluida por control de calidad.
 
 Nota de versión (Fase 5, 2026-06-29): normalizados los headers YAML de los MD operativos dentro de
 `experimentos/` y `analisis/`, y regeneradas las tablas de experimentos y análisis desde esos headers.
-`redaccion/` todavía no contiene MD operativo con YAML estandarizado.
+`redaccion/introduccion/introduccion_borrador_tb_emb_dia.md` existe como borrador preliminar con YAML operativo; no es texto final.
+
+Nota de version (Fase 7, 2026-06-29): generado `AGENTS.md` v1.0 como guia autosuficiente para agentes y agregada la carpeta `inbox/` como bandeja de entrada para material sin ordenar.
 
 Estados posibles de un archivo de datos o análisis:
 - estado_dato: crudo (generado, sin procesar) o analizado (con resultado interpretable)
@@ -58,6 +60,7 @@ Estados posibles de un archivo de datos o análisis:
 | recursos/legacy/ | PDFs de soporte técnico originales | NO |
 | recursos/scripts/ | Scripts de soporte y análisis | Sí |
 | recursos/presentaciones/ | Presentaciones del proyecto | Sí |
+| inbox/ | Material pegado sin ordenar | No como fuente final |
 
 ## Tabla de experimentos
 
@@ -85,7 +88,7 @@ Estados posibles de un archivo de datos o análisis:
 
 | Sección | Estado | Bloques cubiertos |
 |---------|--------|-------------------|
-| introduccion/ | pendiente de normalizar | Hay un TXT de borrador, pero no hay MD operativo con YAML en esta sección. |
+| introduccion/ | borrador preliminar | `introduccion_borrador_tb_emb_dia.md`; cubre 1.1 y 1.2 parcial, requiere limpieza y verificacion contra corpus. |
 | materiales_metodos/ | no iniciado | |
 | resultados/ | no iniciado | |
 | discusion/ | no iniciado | |
@@ -123,9 +126,9 @@ Estados posibles de un archivo de datos o análisis:
 
 ## Pendientes derivados
 
-- AGENTS.md: pendiente (Claude, Fase 7 de su prompt).
+- AGENTS.md: COMPLETADO (Fase 7, v1.0, 2026-06-29); pendiente de revision fina por Claude/Opus si se desea mejorar estilo y densidad cientifica.
 - INDEX_corpus_obsidian.md: pendiente (Claude, Fase 8 de su prompt).
-- Redacción: convertir o crear MD operativos con YAML estandarizado cuando empiece cada sección.
+- Redaccion: introduccion incluida como borrador preliminar; falta limpiar notas, resolver citas pendientes y verificar contra el corpus de Obsidian.
 - Concentración subinhibitoria de tratamiento para OE3: pendiente de fijar a partir de IC50 ~1 ug/mL e IC90 ~2 ug/mL.
 - Análisis formal de IC50/IC90 en GraphPad: pendiente de consolidar contra los archivos Prism de la carpeta.
 - Adquisición DIA: no iniciada (OE2 a OE6).

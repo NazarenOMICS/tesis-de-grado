@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2026-06-29 Fase 7: AGENTS.md e inbox
+- Generado `AGENTS.md` v1.0 como guia autosuficiente para agentes, con contexto del proyecto, reglas de navegacion, fuentes de verdad, criterios de revision, mantenimiento de la base y reglas de `inbox/`.
+- Agregada carpeta `inbox/` con `inbox/README.md` para pegar material sin ordenar antes de que un agente lo clasifique.
+- Actualizado `INDEX.md` (v1.6) para registrar `inbox/` y marcar AGENTS.md como completado.
+
 ## 2026-06-29 Cierre formal de Fase 6: Git y changelog
 - Verificado que la rama `main` esta sincronizada con `origin/main`.
 - Documentada la politica vigente en `politica_git_y_portabilidad.md`: `legacy/` se versiona para portabilidad entre computadoras, a diferencia del prompt maestro inicial.
