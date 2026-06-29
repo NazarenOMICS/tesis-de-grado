@@ -73,7 +73,7 @@ Estas decisiones están tomadas y registradas; no se reabren salvo inconsistenci
 
 ## Estado de la introducción por bloques
 
-La introducción no está redactada en la carpeta de trabajo: `redaccion/introduccion/introduccion hasta el dia de hoy.txt` está vacío (0 bytes). Estado: NO INICIADA en `redaccion/`.
+La introducción tiene un borrador preliminar integrado en `redaccion/introduccion/introduccion_borrador_tb_emb_dia.md`. Estado: BORRADOR PRELIMINAR, no texto final. Cubre 1.1 y 1.2 de forma parcial y requiere limpieza, citas y verificación contra el corpus correcto.
 
 Los bloques temáticos identificables a partir de los antecedentes del anteproyecto son:
 
@@ -83,15 +83,15 @@ Los bloques temáticos identificables a partir de los antecedentes del anteproye
 4. C. glutamicum como modelo no patógeno emparentado con Mycobacteriales. Material de base disponible (anteproyecto).
 5. Proteómica DIA frente a DDA y justificación metodológica. Material de base disponible (anteproyecto, paper Frey 2025).
 
-El mapeo completo de la introducción a la estructura de bloques 1.1 a 1.8 y su corpus de respaldo viven en el Obsidian vault y se indexarán en la Fase 8 (`bibliografia/INDEX_corpus_obsidian.md`, pendiente). El estado de los bloques 1.6, 1.7 y 1.8 está pendiente de verificar contra el vault; podrían no tener material de base propio todavía. NO CONSTA en las fuentes cargadas una redacción avanzada de ningún bloque.
+El mapeo completo de la introducción a la estructura de bloques 1.1 a 1.8 y su corpus de respaldo debe salir del Obsidian vault correcto del TFDC. En Fase 8 se auditó la ruta `C:/Users/Naza/Documents/Obsidian Vault/OBL alimentos`, pero esa ruta corresponde a un proyecto de alimentos/MenoPAUSA y no al corpus científico del TFDC. Por lo tanto, los bloques 1.1 a 1.8 siguen pendientes de verificar contra el vault correcto. Detalle en `bibliografia/INDEX_corpus_obsidian.md`.
 
 ## Pendientes globales abiertos
 
 1. OE1: fijar la concentración subinhibitoria de tratamiento para OE3; consolidar IC50/IC90 contra los archivos Prism presentes en la carpeta.
 2. OE2 a OE6: no iniciados; la adquisición DIA no ha comenzado.
-3. Redacción: introducción, materiales y métodos, resultados, discusión y conclusiones no iniciados en `redaccion/`.
-4. `AGENTS.md`: pendiente (Fase 7).
-5. `bibliografia/INDEX_corpus_obsidian.md` e integración del Obsidian vault: pendiente (Fase 8); incluye verificar el estado de los bloques 1.6 a 1.8.
+3. Redacción: introducción en borrador preliminar; materiales y métodos, resultados, discusión y conclusiones no iniciados en `redaccion/`.
+4. `AGENTS.md`: completado en Fase 7 y revisado a v2.0 como contrato operativo agente-agente.
+5. `bibliografia/INDEX_corpus_obsidian.md`: creado en Fase 8 como auditoría de ruta no correspondiente; falta localizar el vault correcto del TFDC para verificar bloques 1.1 a 1.8.
 6. Verificación de correspondencia entre el informe metodológico de OE1 y los archivos GraphPad Prism.
 
 ## Fuentes

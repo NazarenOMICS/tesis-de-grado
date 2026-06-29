@@ -51,9 +51,10 @@ Hechos del proyecto:
 4. Pasantía (`pasantia/informe_pasantia_perfil_termico_proteoma.md`), solo como antecedente.
 
 Contenido científico:
-1. Corpus del Obsidian vault, cuando exista `bibliografia/INDEX_corpus_obsidian.md` (Fase 8). Tendrá prioridad para preguntas científicas, interpretación de resultados, introducción y discusión.
-2. Hasta entonces, los MD de `bibliografia/`.
-3. Conocimiento general del agente, solo como complemento y declarado como tal.
+1. Corpus del Obsidian vault, solo cuando `bibliografia/INDEX_corpus_obsidian.md` marque `estado_integracion: corpus_tfdc_identificado`. En ese caso tiene prioridad para preguntas científicas, interpretación de resultados, introducción y discusión.
+2. Si `bibliografia/INDEX_corpus_obsidian.md` marca una ruta auditada no correspondiente o incompleta, no usar ese vault como fuente científica del TFDC.
+3. Hasta que el corpus correcto esté identificado, usar los MD de `bibliografia/`, `proyecto/`, `pasantia/`, `experimentos/` y `estado_actual_tesis.md`.
+4. Conocimiento general del agente, solo como complemento y declarado como tal.
 
 Regla transversal: resultado posterior gana a plan anterior. El anteproyecto no sobrescribe lo que registra `estado_actual_tesis.md`.
 

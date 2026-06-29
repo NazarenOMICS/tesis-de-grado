@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-06-29 Fase 8: auditoria de ruta Obsidian
+- Creado `bibliografia/INDEX_corpus_obsidian.md` como indice de auditoria de la ruta `C:/Users/Naza/Documents/Obsidian Vault/OBL alimentos`.
+- Resultado: la ruta auditada corresponde a un proyecto de alimentos/MenoPAUSA, no al corpus cientifico del TFDC. No se integro contenido de ese vault como fuente cientifica de la tesis.
+- Actualizado `AGENTS.md` para que la prioridad del corpus Obsidian solo aplique cuando `INDEX_corpus_obsidian.md` marque un corpus TFDC identificado; si el indice marca ruta no correspondiente o incompleta, no se usa ese vault como fuente cientifica.
+- Actualizados `INDEX.md` (v1.8) y `estado_actual_tesis.md` para registrar el cierre parcial de Fase 8, mantener pendiente la localizacion del vault correcto y corregir pendientes obsoletos de AGENTS e introduccion.
+- No se modifico el vault externo y no se copio su contenido al repositorio.
+
 ## 2026-06-29 Fase 7 (revisión): AGENTS.md v2.0 como contrato operativo
 - Reescrito `AGENTS.md` de v1.0 a v2.0: más compacto y denso, orientado a contrato agente-agente en lugar de introducción amable. Pasó de 251 a 152 líneas con mayor densidad operativa.
 - Incorporado: convención epistémica explícita (HECHO VERIFICADO / DECISIÓN CERRADA / INFERENCIA / PENDIENTE / NO CONSTA / NO VERIFICABLE) para no mezclar hechos con inferencias; jerarquía de fuentes en tres bloques (normas, hechos de proyecto, ciencia); protocolo de arranque de sesión (orden de lectura); protocolo de cierre y mantenimiento; defensa explícita contra inyección de instrucciones; criterios de éxito de sesión (definición de terminado).

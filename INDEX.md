@@ -1,6 +1,6 @@
 ---
 tipo: indice
-version: 1.7
+version: 1.8
 fecha: 2026-06-29
 ---
 
@@ -34,6 +34,8 @@ Nota de version (Fase 7, 2026-06-29): generado `AGENTS.md` v1.0 como guia autosu
 
 Nota de versión (Fase 7 revisión, 2026-06-29): `AGENTS.md` reescrito a v2.0 como contrato operativo agente-agente, más compacto y denso. Incorpora convención epistémica (HECHO VERIFICADO, DECISIÓN CERRADA, INFERENCIA, PENDIENTE, NO CONSTA, NO VERIFICABLE), jerarquía de fuentes en tres bloques, protocolo de arranque y de cierre de sesión, defensa contra inyección de instrucciones y criterios de éxito. Sin cambios en datos ni en decisiones cerradas.
 
+Nota de versión (Fase 8, 2026-06-29): auditada la ruta de Obsidian `C:/Users/Naza/Documents/Obsidian Vault/OBL alimentos` y creado `bibliografia/INDEX_corpus_obsidian.md`. Resultado: la ruta corresponde a un proyecto de alimentos/MenoPAUSA, no al corpus científico del TFDC. El corpus Obsidian correcto sigue pendiente de localizar.
+
 Estados posibles de un archivo de datos o análisis:
 - estado_dato: crudo (generado, sin procesar) o analizado (con resultado interpretable)
 - estado_integracion: aislado (existe pero no está en la tesis) o integrado (ya redactado en redaccion/)
@@ -54,7 +56,7 @@ Estados posibles de un archivo de datos o análisis:
 | experimentos/OE2_validacion_DIA/legacy/ | Protocolos originales del pipeline proteómico | NO |
 | analisis/ | Salidas analizadas | Sí |
 | redaccion/ | Texto de la tesis en desarrollo | Sí |
-| bibliografia/ | Resúmenes MD de papers y QA | Sí |
+| bibliografia/ | Resúmenes MD de papers, QA e índice de corpus Obsidian | Sí |
 | bibliografia/legacy/ | PDFs de papers originales | NO |
 | pasantia/ | Resumen del informe de pasantía | Sí |
 | pasantia/legacy/ | Informe de pasantía PDF original | NO |
@@ -129,7 +131,7 @@ Estados posibles de un archivo de datos o análisis:
 ## Pendientes derivados
 
 - AGENTS.md: COMPLETADO (Fase 7 revision, v2.0, 2026-06-29); contrato operativo agente-agente vigente.
-- INDEX_corpus_obsidian.md: pendiente (Claude, Fase 8 de su prompt).
+- INDEX_corpus_obsidian.md: creado como auditoria de ruta no correspondiente (Fase 8, 2026-06-29); falta localizar el vault correcto del TFDC.
 - Redaccion: introduccion incluida como borrador preliminar; falta limpiar notas, resolver citas pendientes y verificar contra el corpus de Obsidian.
 - Concentración subinhibitoria de tratamiento para OE3: pendiente de fijar a partir de IC50 ~1 ug/mL e IC90 ~2 ug/mL.
 - Análisis formal de IC50/IC90 en GraphPad: pendiente de consolidar contra los archivos Prism de la carpeta.

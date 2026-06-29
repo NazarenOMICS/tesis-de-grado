@@ -9,6 +9,9 @@ Thumbs.db
 # Obsidian: el vault no se versiona, solo el indice
 # (ajustar si el vault vive dentro de esta carpeta)
 .obsidian/
+Obsidian Vault/
+OBL alimentos/
+*_obsidian_vault/
 
 # Archivos de datos crudos grandes si los hay
 *.raw
