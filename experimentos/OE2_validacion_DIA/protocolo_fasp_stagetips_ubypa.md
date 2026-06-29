@@ -1,8 +1,15 @@
 ---
-tipo: resumen_pdf_protocolo
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: legacy/protocolo_fasp_stagetips_ubypa.pdf
+titulo: "Protocolo FASP y StageTips UByPA"
+tipo: experimento
+objetivo: OE2
+estado_dato: crudo
+estado_integracion: aislado
+fecha: "2026-06-29"
+fuente: "experimentos/OE2_validacion_DIA/legacy/protocolo_fasp_stagetips_ubypa.pdf"
+depende_de: []
+notas: "Protocolo principal de preparacion de muestras proteomicas para OE2."
+version: "1.0"
+pdf_origen: "legacy/protocolo_fasp_stagetips_ubypa.pdf"
 compresion: alta
 lectura_operativa: si
 ---

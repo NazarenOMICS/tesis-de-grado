@@ -1,8 +1,15 @@
 ---
-tipo: resumen_pdf_manual
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: legacy/manual_amersham_lmw_sds.pdf
+titulo: "Manual Amersham Low Molecular Weight Calibration Kit for SDS"
+tipo: experimento
+objetivo: OE1
+estado_dato: crudo
+estado_integracion: aislado
+fecha: "2026-06-29"
+fuente: "experimentos/legacy/manual_amersham_lmw_sds.pdf"
+depende_de: []
+notas: "Soporte tecnico para interpretar marcadores de SDS-PAGE; no contiene resultados del TFDC."
+version: "1.0"
+pdf_origen: "legacy/manual_amersham_lmw_sds.pdf"
 compresion: alta
 lectura_operativa: si
 ---

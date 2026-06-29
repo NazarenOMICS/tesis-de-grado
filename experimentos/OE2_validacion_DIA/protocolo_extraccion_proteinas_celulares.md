@@ -1,8 +1,15 @@
 ---
-tipo: resumen_pdf_protocolo
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: legacy/protocolo_extraccion_proteinas_celulares.pdf
+titulo: "Protocolo de extraccion de proteinas celulares"
+tipo: experimento
+objetivo: OE2
+estado_dato: crudo
+estado_integracion: aislado
+fecha: "2026-06-29"
+fuente: "experimentos/OE2_validacion_DIA/legacy/protocolo_extraccion_proteinas_celulares.pdf"
+depende_de: []
+notas: "Protocolo preanalitico para muestras proteomicas; no evidencia ejecucion experimental por si solo."
+version: "1.0"
+pdf_origen: "legacy/protocolo_extraccion_proteinas_celulares.pdf"
 compresion: alta
 lectura_operativa: si
 ---

@@ -1,8 +1,15 @@
 ---
-tipo: resumen_pdf_analisis
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: figura_2b_pairwise_estilo.pdf
+titulo: "Grafica pairwise estilo figura 2B"
+tipo: analisis
+objetivo: OE2
+estado_dato: analizado
+estado_integracion: aislado
+fecha: "2026-06-29"
+fuente: "analisis/Analisis Rstudio/figura_2b_pairwise_estilo.pdf"
+depende_de: []
+notas: "Salida exploratoria para validar representacion estilo Figura 2B; no es resultado biologico final."
+version: "1.0"
+pdf_origen: "figura_2b_pairwise_estilo.pdf"
 compresion: alta
 lectura_operativa: si
 ---

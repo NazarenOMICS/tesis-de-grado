@@ -1,8 +1,15 @@
 ---
-tipo: resumen_pdf_analisis
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: informe_metodologico_mic_emb_final.pdf
+titulo: "Informe metodologico final del ensayo EMB"
+tipo: analisis
+objetivo: OE1
+estado_dato: analizado
+estado_integracion: aislado
+fecha: "2026-06-29"
+fuente: "experimentos/OE1_MIC_IC50/MIC/MIC Final Analisis/informe_metodologico_mic_emb_final.pdf"
+depende_de: ["experimentos/OE1_MIC_IC50/protocolo_mic_ic50_emb_v6.md"]
+notas: "Fuente actual para IC50 aproximado 1 ug/mL e IC90 turbidimetrico operativo 2 ug/mL; pendiente consolidar contra Prism."
+version: "1.0"
+pdf_origen: "informe_metodologico_mic_emb_final.pdf"
 compresion: alta
 lectura_operativa: si
 ---

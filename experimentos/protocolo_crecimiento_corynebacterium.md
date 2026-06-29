@@ -1,8 +1,15 @@
 ---
-tipo: resumen_pdf_protocolo
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: legacy/protocolo_crecimiento_corynebacterium.pdf
+titulo: "Protocolo de crecimiento de Corynebacterium"
+tipo: experimento
+objetivo: NA
+estado_dato: crudo
+estado_integracion: aislado
+fecha: "2026-06-29"
+fuente: "experimentos/legacy/protocolo_crecimiento_corynebacterium.pdf"
+depende_de: []
+notas: "Protocolo general de cultivo; verificar contra experimento concreto antes de citarlo."
+version: "1.0"
+pdf_origen: "legacy/protocolo_crecimiento_corynebacterium.pdf"
 compresion: alta
 lectura_operativa: si
 ---

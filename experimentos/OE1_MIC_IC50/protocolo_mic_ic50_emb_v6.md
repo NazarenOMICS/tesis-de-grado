@@ -1,8 +1,15 @@
 ---
-tipo: resumen_pdf_protocolo
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: legacy/protocolo_mic_ic50_emb_v6.pdf
+titulo: "Protocolo MIC e IC50 de etambutol version 6"
+tipo: experimento
+objetivo: OE1
+estado_dato: crudo
+estado_integracion: aislado
+fecha: "2026-06-29"
+fuente: "experimentos/OE1_MIC_IC50/legacy/protocolo_mic_ic50_emb_v6.pdf"
+depende_de: []
+notas: "Protocolo principal de OE1; base metodologica del ensayo EMB."
+version: "1.0"
+pdf_origen: "legacy/protocolo_mic_ic50_emb_v6.pdf"
 compresion: alta
 lectura_operativa: si
 ---

@@ -1,8 +1,15 @@
 ---
-tipo: resumen_pdf_protocolo
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: legacy/protocolo_fasp_stagetips_copia.pdf
+titulo: "Copia del protocolo FASP y StageTips"
+tipo: experimento
+objetivo: OE2
+estado_dato: crudo
+estado_integracion: aislado
+fecha: "2026-06-29"
+fuente: "experimentos/OE2_validacion_DIA/legacy/protocolo_fasp_stagetips_copia.pdf"
+depende_de: ["experimentos/OE2_validacion_DIA/protocolo_fasp_stagetips_ubypa.md"]
+notas: "Copia trazable; preferir protocolo_fasp_stagetips_ubypa.md como referencia principal."
+version: "1.0"
+pdf_origen: "legacy/protocolo_fasp_stagetips_copia.pdf"
 compresion: alta
 lectura_operativa: si
 ---

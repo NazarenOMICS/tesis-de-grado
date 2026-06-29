@@ -1,8 +1,15 @@
 ---
-tipo: resumen_pdf_protocolo
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: legacy/protocolo_od600_emb_2026_04_22.pdf
+titulo: "Protocolo OD600 EMB de abril 2026"
+tipo: experimento
+objetivo: OE1
+estado_dato: crudo
+estado_integracion: aislado
+fecha: "2026-06-29"
+fuente: "experimentos/OE1_MIC_IC50/legacy/protocolo_od600_emb_2026_04_22.pdf"
+depende_de: []
+notas: "Version previa del protocolo; usar solo como trazabilidad metodologica."
+version: "1.0"
+pdf_origen: "legacy/protocolo_od600_emb_2026_04_22.pdf"
 compresion: alta
 lectura_operativa: si
 ---

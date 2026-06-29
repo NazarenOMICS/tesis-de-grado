@@ -1,8 +1,15 @@
 ---
-tipo: resumen_pdf_protocolo
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: legacy/protocolo_azalea_soluciones_cultivo_proteinas.pdf
+titulo: "Hoja Azalea de soluciones para cultivo y procesamiento"
+tipo: experimento
+objetivo: NA
+estado_dato: crudo
+estado_integracion: aislado
+fecha: "2026-06-29"
+fuente: "experimentos/legacy/protocolo_azalea_soluciones_cultivo_proteinas.pdf"
+depende_de: []
+notas: "Referencia general de soluciones; no asignada a un OE especifico todavia."
+version: "1.0"
+pdf_origen: "legacy/protocolo_azalea_soluciones_cultivo_proteinas.pdf"
 compresion: alta
 lectura_operativa: si
 ---

@@ -1,8 +1,15 @@
 ---
-tipo: resumen_pdf_analisis
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: figura_2b_replica_norm_mediana.pdf
+titulo: "Replica de figura 2B con normalizacion por mediana"
+tipo: analisis
+objetivo: OE2
+estado_dato: analizado
+estado_integracion: aislado
+fecha: "2026-06-29"
+fuente: "analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.pdf"
+depende_de: []
+notas: "Salida exploratoria para evaluar normalizacion por mediana; no es resultado biologico final."
+version: "1.0"
+pdf_origen: "figura_2b_replica_norm_mediana.pdf"
 compresion: alta
 lectura_operativa: si
 ---
