@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-06-29 Cierre formal de Fase 6: Git y changelog
+- Verificado que la rama `main` esta sincronizada con `origin/main`.
+- Documentada la politica vigente en `politica_git_y_portabilidad.md`: `legacy/` se versiona para portabilidad entre computadoras, a diferencia del prompt maestro inicial.
+- Confirmado que `CHANGELOG.md`, `.gitignore`, commits descriptivos y push a GitHub estan operativos.
+- PDFs versionados: 25. Archivos en `legacy/` versionados: 24.
+
 ## 2026-06-29 Integración de borrador de introducción
 - Incluido el texto pegado por el estudiante como `redaccion/introduccion/introduccion_borrador_tb_emb_dia.md`, con YAML operativo y estado de borrador preliminar.
 - Corregido de forma mecánica un guion largo y marcado un placeholder de cita pendiente dentro del MD operativo.
