@@ -38,6 +38,8 @@ Nota de versión (Fase 8, 2026-06-29): identificado el corpus científico del TF
 
 Nota de versión (actualización de estado OE2, 2026-06-29): incorporados cuaderno de laboratorio y análisis preliminar TripleSTD desde `inbox/`. OE2 pasa a estado iniciado parcialmente como benchmark multiespecie DDA previo a DIA. La adquisición DIA definitiva sigue no iniciada.
 
+Nota de versión (auditoría TripleSTD, 2026-06-29): el análisis cuantitativo del benchmark (Pairwise y TFold) fue recalculado desde los Excel con `analisis/Datos/Corrida 1 Triple STD/auditoria_triple_std.py` y reproduce las métricas del análisis IA previo. La capa de conteos, medianas y FDR empírico queda verificada (HECHO VERIFICADO); las causas del sesgo de E. coli siguen como inferencia. Sigue siendo avance de OE2 por DDA, no validación DIA.
+
 Estados posibles de un archivo de datos o análisis:
 - estado_dato: crudo (generado, sin procesar) o analizado (con resultado interpretable)
 - estado_integracion: aislado (existe pero no está en la tesis) o integrado (ya redactado en redaccion/)
@@ -139,5 +141,5 @@ Estados posibles de un archivo de datos o análisis:
 - Redaccion: introduccion incluida como borrador preliminar; falta limpiar notas, resolver citas pendientes y verificar contra el corpus de Obsidian.
 - Concentración subinhibitoria de tratamiento para OE3: pendiente de fijar a partir de IC50 ~1 ug/mL e IC90 ~2 ug/mL.
 - Análisis formal de IC50/IC90 en GraphPad: pendiente de consolidar contra los archivos Prism de la carpeta.
-- OE2: iniciado parcialmente como benchmark DDA previo a DIA; falta auditar los Excel TripleSTD y trasladar el enfoque a DIA.
+- OE2: iniciado parcialmente como benchmark DDA previo a DIA. Auditoría cuantitativa de los Excel TripleSTD COMPLETADA y verificada (`auditoria_triple_std.py`); pendiente la verificación ortogonal de la mezcla para cerrar la causa del sesgo de E. coli y el traslado del enfoque a DIA.
 - Adquisición DIA definitiva: no iniciada (OE3 a OE6).

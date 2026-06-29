@@ -75,24 +75,24 @@ HECHO VERIFICADO: se preparo un benchmark con dos condiciones de mezcla y tres r
 
 HECHO VERIFICADO: la preparacion se hizo para 1,5 ug finales por mezcla, con volumen final ajustado para permitir inyeccion. La estrategia se evaluo primero por DDA.
 
-Interpretacion correcta: esto es avance preliminar de OE2, no optimizacion DIA cerrada. Sirve para evaluar mezcla, preparacion, cuantificacion, busqueda y comportamiento de fold changes observados antes de trasladar el enfoque a DIA.
+Interpretacion correcta: esto es avance preliminar de OE2, no optimizacion DIA cerrada. Sirve para controlar mezcla, preparacion, identificacion, cuantificacion, direccion del fold change y sesgos antes de trasladar el enfoque a DIA. El analisis cuantitativo del benchmark (Pairwise y TFold) fue recalculado desde los Excel el 2026-06-29 y la capa de conteos, medianas y FDR empirico quedo verificada; detalle y limites en `analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md`. Sigue sin ser validacion DIA.
 
 ## Extraccion proteica y muestras C. glutamicum
 
 HECHO VERIFICADO: el cuaderno registra un cambio de buffer de lisis para C. glutamicum hacia urea 8 M Tris 100 mM pH 7,5, motivado por interferencias del buffer previo con Triton X-100, lisozima y metodos de cuantificacion. Tambien registra lisis, Qubit, FASP y StageTips de muestras C. glutamicum tratadas o control.
 
-Limite: no formular esto como "optimizacion de extraccion proteica cerrada". La formulacion defendible es preparacion tecnica y evaluacion preliminar de un flujo de lisis/preparacion de muestras. Falta demostrar de forma cerrada recuperacion, reproducibilidad, cobertura y sesgo de proteinas de membrana.
+Limite (formulacion obligatoria): esto no es una optimizacion de extraccion cerrada. Es un cambio de buffer y una preparacion/evaluacion preliminar de un flujo de lisis y preparacion de muestras, adoptado para evitar interferencias documentadas del buffer previo. Lo verificado es la decision de cambio de buffer y su motivo; lo PENDIENTE es demostrar de forma cerrada recuperacion, reproducibilidad entre cultivos, cobertura proteica y sesgo hacia o en contra de proteinas de membrana. No usar la palabra "optimizado" hasta tener esa evidencia.
 
 ## Implicancias para informe de avance
 
-Frase recomendada:
+Frase recomendada (condiciones generales: sin inconvenientes mayores, sin actividades suspendidas; con una actividad de OE2 adelantada parcialmente):
 
-No se registraron retrasos ni suspension de actividades respecto al cronograma del anteproyecto. La principal dificultad metodologica fue que no existia un protocolo operativo para determinar la respuesta de C. glutamicum al etambutol en las condiciones requeridas por la tesis, por lo que fue necesario desarrollarlo a partir de una referencia inicial mediante iteraciones experimentales. En paralelo, se avanzo de forma preliminar en la puesta a punto cuantitativa mediante un estandar multiespecie tipo Frey, evaluado inicialmente por DDA como control antes de su traslado a DIA.
+No se registraron retrasos ni suspension de actividades respecto al cronograma del anteproyecto. El OE1 fue metodologicamente exigente: no existia un protocolo operativo para determinar la respuesta de C. glutamicum al etambutol en las condiciones requeridas por la tesis, por lo que fue necesario desarrollarlo a partir de una referencia inicial mediante iteraciones experimentales hasta cerrar IC50 ~1 ug/mL e IC90 turbidimetrico operativo de 2 ug/mL. En paralelo se adelanto parcialmente el OE2 mediante un estandar multiespecie tipo CQE (humano, E. coli, S. cerevisiae), evaluado primero por DDA para controlar mezcla, preparacion, identificacion y cuantificacion antes de trasladar la estrategia a la adquisicion DIA, que aun no comenzo.
 
 ## Pendientes derivados
 
 1. Fijar concentracion subinhibitoria exacta para OE3.
 2. Verificar correspondencia entre informe OE1 y archivos Prism.
-3. Recalcular o auditar formalmente el analisis TripleSTD desde los Excel antes de integrarlo como resultado.
+3. Benchmark TripleSTD: la capa cuantitativa (conteos, medianas, FDR empirico) ya fue recalculada y verificada desde los Excel (`auditoria_triple_std.py`); queda PENDIENTE solo la verificacion ortogonal de la composicion real de la mezcla para cerrar la causa del sesgo de E. coli.
 4. No presentar el flujo de extraccion como optimizado hasta tener evidencia formal.
 5. No presentar adquisicion DIA como iniciada hasta que existan datos crudos DIA.

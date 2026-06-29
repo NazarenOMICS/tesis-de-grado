@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 2026-06-29 Auditoria TripleSTD y mejora cientifica de los resumenes OE2
+- Recalculadas, desde los Excel originales (`Pairwise_comparison_TripleSTD.xlsx`, `TFold_Analysis_ConParametrosAlejandro_2026-04-17.xlsx`), las metricas que el analisis IA reportaba. El recalculo reproduce los valores: Pairwise 272 significativas (E. coli n=257 mediana log2FC +1,376; S. cerevisiae n=13 -1,145; 1 humano; 1 decoy Reverse_); TFold 1921 cuantificadas, 546 Blue (E. coli 229 sens. 91,6%; levadura 179 79,2%; humano 138); FDR empirico Pairwise 0,37% y TFold Blue 25,3%; overlap 215 (79,0%).
+- Creado `analisis/Datos/Corrida 1 Triple STD/auditoria_triple_std.py` como script reproducible de la auditoria. La capa cuantitativa pasa de NO VERIFICADO a HECHO VERIFICADO; las causas del sesgo de E. coli quedan como inferencia abierta.
+- Reescrito `analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md`: separacion HECHO/INFERENCIA/PENDIENTE, valor metodologico del benchmark (mezcla, preparacion, identificacion, cuantificacion, direccion de fold change, sesgos), formulacion cautelosa del sesgo de E. coli, uso de Pairwise/TFold (especificidad, sensibilidad, FDR empirico, limites de DDA) y conexion acotada con Frey 2025. YAML `verificacion: recalculado_desde_excel_2026-06-29`.
+- Editado `experimentos/cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md`: la extraccion con urea 8 M Tris se reformula como cambio de buffer y evaluacion preliminar, no optimizacion cerrada; frase de informe de avance ajustada (sin retrasos, sin actividades suspendidas, OE1 metodologicamente exigente, OE2 adelantado parcialmente); pendiente de auditoria TripleSTD marcado como completado en su capa cuantitativa.
+- Actualizado `estado_actual_tesis.md` (OE2 con metricas verificadas e inferencias separadas) e `INDEX.md` (nota de version de auditoria y pendiente OE2 actualizado).
+- No se movieron ni borraron fuentes, no se toco el vault de Obsidian, no se altero la estructura del repositorio.
+- Archivos tocados: benchmark_triple_std_dda_resumen_operativo.md, auditoria_triple_std.py (nuevo), cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md, estado_actual_tesis.md, INDEX.md, CHANGELOG.md.
+
 ## 2026-06-29 Actualizacion de estado OE2 desde cuaderno e inbox
 - Incorporados desde `inbox/` la transcripcion contextualizada del cuaderno de laboratorio y el analisis IA preliminar de TripleSTD DDA.
 - Movida la transcripcion completa del cuaderno a `experimentos/legacy/` y creado `experimentos/cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md`.

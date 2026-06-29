@@ -63,7 +63,9 @@ Diseño registrado en cuaderno: condición A con 70% humano, 20% E. coli y 10% S
 
 Control de calidad inicial de extractos individuales: E. coli 1508 proteínas, 115436 espectros identificados y 13309 péptidos; S. cerevisiae 1122 proteínas, 89729 espectros y 10929 péptidos; WISH/humano 2297 proteínas, 95165 espectros y 16527 péptidos; FDR <1 en todos. Fuente: `experimentos/cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md`.
 
-Existe un análisis IA preliminar de Pairwise/TFold en `analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md`, pero sus valores deben recalcularse o auditarse contra los Excel antes de integrarlos como resultado final. No hay validación DIA cerrada.
+Análisis cuantitativo del benchmark (Pairwise y TFold), recalculado desde los Excel el 2026-06-29 con `analisis/Datos/Corrida 1 Triple STD/auditoria_triple_std.py` y verificado contra el análisis IA previo (HECHO VERIFICADO): Pairwise rinde 272 proteínas significativas (E. coli n=257, mediana log2FC +1,376, FC 2,60; S. cerevisiae n=13, mediana -1,145, FC 0,45; humano n=1; más 1 decoy Reverse_). TFold cuantifica 1921 proteínas, con 546 Blue Dots (E. coli 229, sensibilidad 91,6%; S. cerevisiae 179, 79,2%; humano 138). FDR empírico sobre la fracción humana invariante: 0,37% en Pairwise y 25,3% en TFold Blue. Overlap Pairwise/TFold Blue: 215 proteínas (79,0%). La capa de conteos, medianas y FDR está verificada.
+
+Lo que queda como INFERENCIA, no como resultado cerrado: la dirección del cambio es correcta para los organismos diferenciales y el fold change de E. coli está sobreestimado de forma reproducible (FC ~2,6 a 3,1 frente al esperado 2,0); la causa más parsimoniosa es de preparación o cuantificación de la muestra, pero su atribución concreta (error de stock y su magnitud) queda PENDIENTE de verificación ortogonal. El mayor FDR empírico de TFold frente a Pairwise es consistente con límites estructurales de DDA (selección estocástica de precursores, valores faltantes, efectos de corrida) y se respalda con bibliografía, no solo con este análisis. Esto es avance metodológico de OE2 por DDA, no validación DIA: la adquisición DIA definitiva no ha comenzado.
 
 ### OE3 a OE6: NO INICIADOS
 
@@ -98,7 +100,7 @@ El mapeo completo de la introducción a la estructura de bloques 1.1 a 1.8 y su 
 ## Pendientes globales abiertos
 
 1. OE1: fijar la concentración subinhibitoria de tratamiento para OE3; consolidar IC50/IC90 contra los archivos Prism presentes en la carpeta.
-2. OE2: iniciado parcialmente como benchmark DDA previo a DIA; falta auditar Pairwise/TFold contra Excel y trasladar el enfoque a DIA.
+2. OE2: iniciado parcialmente como benchmark DDA previo a DIA. La auditoría cuantitativa de Pairwise/TFold contra los Excel ya está hecha y verificada (`auditoria_triple_std.py`); queda pendiente la verificación ortogonal de la composición de la mezcla para cerrar la causa del sesgo de E. coli, y trasladar el enfoque a DIA.
 3. OE3 a OE6: no iniciados; la adquisición DIA no ha comenzado.
 4. Redacción: introducción en borrador preliminar; materiales y métodos, resultados, discusión y conclusiones no iniciados en `redaccion/`.
 5. `AGENTS.md`: completado en Fase 7 y revisado a v2.0 como contrato operativo agente-agente.
