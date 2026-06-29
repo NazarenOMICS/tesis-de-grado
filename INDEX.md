@@ -98,4 +98,12 @@ Estados posibles de un archivo de datos o análisis:
 | experimentos/OE2_validacion_DIA/protocolo_fasp_stagetips_copia.md | experimentos/OE2_validacion_DIA/legacy/protocolo_fasp_stagetips_copia.pdf |
 | recursos/tutorial_patternlab_v.md | recursos/legacy/tutorial_patternlab_v.pdf |
 | recursos/obligatorio_bioinformatica_1.md | recursos/legacy/obligatorio_bioinformatica_1.pdf |
-| analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.md | analisis/Analisis Rstudio/figura_2
+| analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.md | analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.pdf |
+| analisis/Analisis Rstudio/figura_2b_pairwise_estilo.md | analisis/Analisis Rstudio/figura_2b_pairwise_estilo.pdf |
+
+## Pendientes derivados
+
+- AGENTS.md: pendiente (Claude, Fase 7 de su prompt).
+- INDEX_corpus_obsidian.md: pendiente (Claude, Fase 8 de su prompt).
+- Análisis formal de IC50/MIC en GraphPad: pendiente de consolidar contra los archivos Prism.
+- Adquisición DIA: no iniciada.
