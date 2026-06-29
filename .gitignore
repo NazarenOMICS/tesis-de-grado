@@ -1,0 +1,17 @@
+# PDFs pesados en carpetas legacy: no van al control de versiones
+**/legacy/
+
+# Archivos temporales y del sistema
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Obsidian: el vault no se versiona, solo el indice
+# (ajustar si el vault vive dentro de esta carpeta)
+.obsidian/
+
+# Archivos de datos crudos grandes si los hay
+*.raw
+*.wiff
+*.d/
