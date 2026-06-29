@@ -1,22 +1,17 @@
 ---
-tipo: resumen_pdf_proyecto
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: legacy/anteproyecto_tfdc_nazareno_cabrera.pdf
-compresion: alta
+titulo: "Anteproyecto TFDC: Nuevas perspectivas sobre el efecto biológico del etambutol en Mycobacteriales a partir de proteómica cuantitativa basada en DIA"
+tipo: resumen_anteproyecto
+fuente_pdf: legacy/anteproyecto_tfdc_nazareno_cabrera.pdf
+formulario_origen: "Formulario de Anteproyecto de tesis, Versión 2025 (proyecto/legacy/Formulario de anteproyecto e Informe de avance 1.docx)"
+estudiante: "Nazareno Iván Cabrera (286746)"
+carrera: "Ingeniería en Biotecnología"
+tutor: "Alejandro Leyva (alejandrolp@pasteur.edu.uy), no docente ORT, CV y CI enviados"
+lugar: "Unidad de Proteómica y Bioquímica Analíticas (UBYPA), Institut Pasteur de Montevideo"
+fecha_comienzo: "03/2026"
+fecha_resumen: 2026-06-29
+version: 2.0
 lectura_operativa: si
+nota: "Fuente primaria de hipótesis, objetivo general, los seis OE y el cronograma. Insumo directo para estado_actual_tesis.md (Fase 4)."
 ---
 
-# Anteproyecto TFDC Nazareno Cabrera
-
-## Uso operativo
-
-Documento base del proyecto de tesis y fuente primaria de titulo, objetivo y alcance inicial.
-
-## Contenido comprimido
-
-El anteproyecto presenta el titulo del TFDC: nuevas perspectivas sobre el efecto biologico del etambutol en Mycobacteriales a partir de proteomica cuantitativa basada en adquisicion independiente de datos. Identifica al estudiante, carrera, tutor y marco general del proyecto. Es la fuente de alcance inicial, motivacion, objetivos y plan de trabajo.
-
-## Instruccion para agente
-
-Usar como referencia de alineacion del proyecto. Si contradice datos o decisiones posteriores, priorizar documentos experimentales actuales y dejar constancia del cambio.
+# Anteproyecto TF

@@ -1,22 +1,18 @@
 ---
-tipo: resumen_pdf_proyecto
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: legacy/informe_pasantia_perfil_termico_proteoma.pdf
-compresion: alta
+titulo: "Informe de pasantía: implementación y estandarización de un flujo proteómico y primera aproximación al perfil térmico del proteoma en C. glutamicum"
+tipo: resumen_informe_pasantia
+fuente_pdf: legacy/informe_pasantia_perfil_termico_proteoma.pdf
+estudiante: "Nazareno Iván Cabrera (286746)"
+tutor: "Alejandro Leyva"
+lugar: "Unidad de Bioquímica y Proteómica Analíticas (UBYPA), Institut Pasteur de Montevideo"
+fecha_resumen: 2026-06-29
+version: 2.0
 lectura_operativa: si
+relacion_tfdc: "antecedente metodológico del TFDC, no categoría separada"
 ---
 
-# Informe de pasantia sobre perfil termico del proteoma
+# Informe de pasantía. Perfil térmico del proteoma en C. glutamicum
 
-## Uso operativo
+## Relación con el TFDC
 
-Antecedente tecnico del proyecto activo, centrado en implementacion y estandarizacion de flujo de trabajo proteomico.
-
-## Contenido comprimido
-
-El informe describe una pasantia sobre implementacion y estandarizacion de un flujo de trabajo para analisis del perfil termico del proteoma en C. glutamicum. Aporta contexto de experiencia previa en preparacion, analisis y procesamiento de datos proteomicos. Es antecedente metodologico, no una categoria separada del TFDC.
-
-## Instruccion para agente
-
-Usar para reconstruir experiencia previa y continuidad tecnica hacia el TFDC. No tratarlo como proyecto externo.
+La pasantía es antecedente metodológico del TFDC activo, no un proyecto externo ni una categoría separada. Aporta la experiencia previa en el flujo proteómico que el TFDC retoma y profundiza. El TFDC camb

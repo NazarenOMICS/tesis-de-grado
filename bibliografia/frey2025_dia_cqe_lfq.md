@@ -1,22 +1,19 @@
 ---
-tipo: resumen_pdf_paper
-version: 1.0
-fecha: 2026-06-29
-pdf_origen: legacy/frey2025_dia_cqe_lfq.pdf
-compresion: alta
+titulo: "Recommendations for Quantitative DIA Proteomics using Controlled Quantitative Experiments (CQEs)"
+autores: "Frey A, Sidgwick F, Porter A, Palmowski P, Trost M"
+anio: 2025
+fuente: "bioRxiv preprint, doi:10.1101/2025.09.22.677725 (no revisado por pares al momento del resumen)"
+tipo: resumen_paper
+bloque_tematico: "Proteómica cuantitativa DIA: validación, control de calidad y métricas (alimenta intro DIA vs DDA y metodología OE2/OE3/OE6)"
+objetivo_relacionado: "OE2, OE3, OE6"
+fuente_pdf: legacy/frey2025_dia_cqe_lfq.pdf
+fecha_resumen: 2026-06-29
+version: 2.0
 lectura_operativa: si
 ---
 
-# Recommendations for Quantitative DIA Proteomics using CQEs
+# Frey 2025. Recomendaciones para proteómica DIA cuantitativa con CQEs
 
-## Uso operativo
+## Bloque temático
 
-Referencia metodologica central para diseno, validacion y evaluacion cuantitativa de proteomica DIA.
-
-## Contenido comprimido
-
-El paper propone usar experimentos cuantitativos controlados para evaluar desempeno DIA. Compara estrategias de cuantificacion, controles y criterios de calidad aplicables a adquisicion independiente de datos. Es clave para el setup del pipeline porque ayuda a justificar controles, normalizacion, linealidad, reproducibilidad y evaluacion de sesgos entre condiciones o matrices.
-
-## Instruccion para agente
-
-Usar para OE2 y metodologia DIA. Priorizarlo cuando se discuta validacion cuantitativa, CQE, LFQ, reproducibilidad y criterios de aceptacion del pipeline.
+Metodología de proteómica DIA cuantitativa: cómo evaluar y validar la cuantificación, no solo la identificación. Alimenta el bloque de introducción sobre DIA frente a DDA y, sobre todo, la metodología de los OE2 (implementar y validar

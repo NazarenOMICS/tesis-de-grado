@@ -1,6 +1,6 @@
 ---
 tipo: indice
-version: 1.1
+version: 1.2
 fecha: 2026-06-29
 ---
 
@@ -19,6 +19,15 @@ en versión densa y accionable (alcance, reglas accionables numeradas, números 
 ambigüedades) verificando contra los PDFs de `normativa/legacy/`. Reemplazan a los resúmenes
 comprimidos de Codex. Precedencia normativa: el Documento 302-BI prevalece en conflicto,
 en particular frente al Documento 303-BI.
+
+Nota de versión (Fase 3, 2026-06-29): ampliados a versión densa los resúmenes de pasantía
+(`pasantia/informe_pasantia_perfil_termico_proteoma.md`), anteproyecto
+(`proyecto/anteproyecto_tfdc_nazareno_cabrera.md`) y bibliografía (`bibliografia/*.md`).
+El anteproyecto ahora contiene hipótesis, objetivo general, los seis OE y el cronograma,
+como insumo directo de la Fase 4. La pasantía distingue qué quedó validado, qué fue exploratorio
+y qué no se retoma, y deja explícito que la adquisición DIA no fue parte validada de la pasantía.
+Los MD de papers incorporan `bloque_tematico` en YAML. El PDF de Frey 2025 y su copia
+`copia_setup` son idénticos (mismo md5); el resumen principal es `frey2025_dia_cqe_lfq.md`.
 
 Estados posibles de un archivo de datos o análisis:
 - estado_dato: crudo (generado, sin procesar) o analizado (con resultado interpretable)
@@ -93,17 +102,4 @@ Estados posibles de un archivo de datos o análisis:
 | experimentos/OE1_MIC_IC50/protocolo_od600_emb_2026_04_22.md | experimentos/OE1_MIC_IC50/legacy/protocolo_od600_emb_2026_04_22.pdf |
 | experimentos/OE1_MIC_IC50/protocolo_od600_emb_v4_2026_05_13.md | experimentos/OE1_MIC_IC50/legacy/protocolo_od600_emb_v4_2026_05_13.pdf |
 | experimentos/OE1_MIC_IC50/MIC/MIC Final Analisis/informe_metodologico_mic_emb_final.md | experimentos/OE1_MIC_IC50/MIC/MIC Final Analisis/informe_metodologico_mic_emb_final.pdf |
-| experimentos/OE2_validacion_DIA/protocolo_fasp_stagetips_ubypa.md | experimentos/OE2_validacion_DIA/legacy/protocolo_fasp_stagetips_ubypa.pdf |
-| experimentos/OE2_validacion_DIA/protocolo_extraccion_proteinas_celulares.md | experimentos/OE2_validacion_DIA/legacy/protocolo_extraccion_proteinas_celulares.pdf |
-| experimentos/OE2_validacion_DIA/protocolo_fasp_stagetips_copia.md | experimentos/OE2_validacion_DIA/legacy/protocolo_fasp_stagetips_copia.pdf |
-| recursos/tutorial_patternlab_v.md | recursos/legacy/tutorial_patternlab_v.pdf |
-| recursos/obligatorio_bioinformatica_1.md | recursos/legacy/obligatorio_bioinformatica_1.pdf |
-| analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.md | analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.pdf |
-| analisis/Analisis Rstudio/figura_2b_pairwise_estilo.md | analisis/Analisis Rstudio/figura_2b_pairwise_estilo.pdf |
-
-## Pendientes derivados
-
-- AGENTS.md: pendiente (Claude, Fase 7 de su prompt).
-- INDEX_corpus_obsidian.md: pendiente (Claude, Fase 8 de su prompt).
-- Análisis formal de IC50/MIC en GraphPad: pendiente de consolidar contra los archivos Prism.
-- Adquisición DIA: no iniciada.
+| expe
