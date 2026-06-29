@@ -10,6 +10,7 @@ fuente_datos:
 fuente_interpretativa_no_verificada: legacy/analisis_ia_triple_std_dda_resultadoporGPT.txt
 script_auditoria: auditoria_triple_std.py
 verificacion: recalculado_desde_excel_2026-06-29
+estado_comunicacional: interno_no_oficial_no_presentado_tutor
 ---
 
 # Benchmark TripleSTD DDA, resumen operativo
@@ -19,6 +20,8 @@ verificacion: recalculado_desde_excel_2026-06-29
 HECHO VERIFICADO (cuaderno de laboratorio): el benchmark TripleSTD es un estándar multiespecie tipo CQE (WISH/humano, *E. coli*, *S. cerevisiae*) mezclado en proporciones conocidas y evaluado primero por DDA. Su función es controlar el flujo de cuantificación antes de trasladar la lógica a DIA.
 
 DECISIÓN CERRADA de encuadre: es avance metodológico preliminar de OE2, no validación DIA y no experimento biológico EMB/control. No reemplaza OE3. La adquisición DIA definitiva no comenzó.
+
+DECISIÓN CERRADA de comunicación: este análisis está auditado como insumo interno de trabajo. No es resultado oficial del TFDC, no fue presentado al tutor como resultado y no debe redactarse como resultado oficial sin una decisión explícita posterior.
 
 Valor metodológico que sí aporta el benchmark, dentro de su alcance DDA:
 
@@ -51,7 +54,7 @@ HECHO VERIFICADO (cuaderno):
 | *S. cerevisiae* | 1122 | 89729 | 10929 | <1 |
 | WISH/humano | 2297 | 95165 | 16527 | <1 |
 
-Interpretación: los extractos eran adecuados para sostener un benchmark DDA. Sostiene avance preliminar de OE2, no validación DIA.
+Interpretación: los extractos eran adecuados para sostener un benchmark DDA. Sostiene avance preliminar interno de OE2, no validación DIA ni resultado oficial presentado.
 
 ## Métricas recalculadas desde los Excel
 
@@ -133,9 +136,10 @@ Frey 2025 respalda dos puntos, y solo esos: que un método de proteómica cuanti
 3. No citar la hipótesis del stock de *E. coli* con un porcentaje cerrado sin cuantificación ortogonal.
 4. No mezclar este benchmark con el dataset biológico EMB/control, que no existe como adquisición DIA definitiva.
 5. Las ventajas de DIA frente a DDA se sostienen con bibliografía (Frey 2025 y los benchmarks que referencia), no solo con este análisis.
+6. No presentarlo como resultado oficial ni como resultado comunicado al tutor salvo decisión explícita posterior.
 
 ## Pendientes derivados
 
 1. Verificación ortogonal de la composición real de la mezcla (cuantificación absoluta del stock de *E. coli*) si se quiere cerrar la causa del desvío.
 2. Trasladar la lógica del benchmark a DIA cuando la adquisición DIA esté disponible, y comparar FDR empírico y CV inter-réplica DDA vs DIA (insumo de OE6).
-3. Decidir si las figuras del benchmark (distribuciones log2FC por organismo, Pairwise vs TFold) se integran a redacción; los datos ya están auditados con `auditoria_triple_std.py`.
+3. Decidir, antes de cualquier redacción oficial, si las figuras del benchmark (distribuciones log2FC por organismo, Pairwise vs TFold) se integran a la tesis; los datos ya están auditados con `auditoria_triple_std.py`, pero su estado actual es insumo interno.

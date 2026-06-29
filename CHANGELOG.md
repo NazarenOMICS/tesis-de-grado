@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2026-06-29 Marcado comunicacional de TripleSTD y DIA
+- Aclarado en `estado_actual_tesis.md`, `AGENTS.md`, `INDEX.md`, `experimentos/cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md` y `analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md` que el benchmark TripleSTD DDA es insumo interno auditado, no resultado oficial del TFDC y no fue presentado al tutor como resultado.
+- Reforzado que la adquisición DIA definitiva no comenzó, no fue analizada y no fue presentada como resultado. El informe oficial recomendado omite el benchmark TripleSTD salvo decisión explícita posterior.
+
 ## 2026-06-29 Auditoria TripleSTD y mejora cientifica de los resumenes OE2
 - Recalculadas, desde los Excel originales (`Pairwise_comparison_TripleSTD.xlsx`, `TFold_Analysis_ConParametrosAlejandro_2026-04-17.xlsx`), las metricas que el analisis IA reportaba. El recalculo reproduce los valores: Pairwise 272 significativas (E. coli n=257 mediana log2FC +1,376; S. cerevisiae n=13 -1,145; 1 humano; 1 decoy Reverse_); TFold 1921 cuantificadas, 546 Blue (E. coli 229 sens. 91,6%; levadura 179 79,2%; humano 138); FDR empirico Pairwise 0,37% y TFold Blue 25,3%; overlap 215 (79,0%).
 - Creado `analisis/Datos/Corrida 1 Triple STD/auditoria_triple_std.py` como script reproducible de la auditoria. La capa cuantitativa pasa de NO VERIFICADO a HECHO VERIFICADO; las causas del sesgo de E. coli quedan como inferencia abierta.

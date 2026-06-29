@@ -27,7 +27,7 @@ Formulacion correcta:
 | Objetivo | Estado corregido |
 |---|---|
 | OE1 | Completado como desarrollo metodologico propio de MIC/IC50/IC90 operativo en CGXII-sacarosa |
-| OE2 | Iniciado parcialmente como benchmark cuantitativo DDA previo a DIA; DIA definitiva no iniciada |
+| OE2 | Iniciado parcialmente como benchmark cuantitativo DDA previo a DIA; insumo interno no oficial; DIA definitiva no iniciada |
 | OE3 | No iniciado como set biologico definitivo control vs EMB para DIA |
 | OE4 | No iniciado como analisis cuantitativo final de proteinas diferenciales del TFDC |
 | OE5 | No iniciado |
@@ -75,7 +75,7 @@ HECHO VERIFICADO: se preparo un benchmark con dos condiciones de mezcla y tres r
 
 HECHO VERIFICADO: la preparacion se hizo para 1,5 ug finales por mezcla, con volumen final ajustado para permitir inyeccion. La estrategia se evaluo primero por DDA.
 
-Interpretacion correcta: esto es avance preliminar de OE2, no optimizacion DIA cerrada. Sirve para controlar mezcla, preparacion, identificacion, cuantificacion, direccion del fold change y sesgos antes de trasladar el enfoque a DIA. El analisis cuantitativo del benchmark (Pairwise y TFold) fue recalculado desde los Excel el 2026-06-29 y la capa de conteos, medianas y FDR empirico quedo verificada; detalle y limites en `analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md`. Sigue sin ser validacion DIA.
+Interpretacion correcta: esto es avance preliminar interno de OE2, no optimizacion DIA cerrada y no resultado oficial presentado al tutor. Sirve para controlar mezcla, preparacion, identificacion, cuantificacion, direccion del fold change y sesgos antes de trasladar el enfoque a DIA. El analisis cuantitativo del benchmark (Pairwise y TFold) fue recalculado desde los Excel el 2026-06-29 y la capa de conteos, medianas y FDR empirico quedo verificada para uso de trabajo; detalle y limites en `analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md`. Sigue sin ser validacion DIA.
 
 ## Extraccion proteica y muestras C. glutamicum
 
@@ -85,9 +85,9 @@ Limite (formulacion obligatoria): esto no es una optimizacion de extraccion cerr
 
 ## Implicancias para informe de avance
 
-Frase recomendada (condiciones generales: sin inconvenientes mayores, sin actividades suspendidas; con una actividad de OE2 adelantada parcialmente):
+Frase recomendada para informe oficial si se decide no mencionar el benchmark TripleSTD:
 
-No se registraron retrasos ni suspension de actividades respecto al cronograma del anteproyecto. El OE1 fue metodologicamente exigente: no existia un protocolo operativo para determinar la respuesta de C. glutamicum al etambutol en las condiciones requeridas por la tesis, por lo que fue necesario desarrollarlo a partir de una referencia inicial mediante iteraciones experimentales hasta cerrar IC50 ~1 ug/mL e IC90 turbidimetrico operativo de 2 ug/mL. En paralelo se adelanto parcialmente el OE2 mediante un estandar multiespecie tipo CQE (humano, E. coli, S. cerevisiae), evaluado primero por DDA para controlar mezcla, preparacion, identificacion y cuantificacion antes de trasladar la estrategia a la adquisicion DIA, que aun no comenzo.
+No se registraron retrasos ni suspension de actividades respecto al cronograma del anteproyecto. El OE1 fue metodologicamente exigente: no existia un protocolo operativo para determinar la respuesta de C. glutamicum al etambutol en las condiciones requeridas por la tesis, por lo que fue necesario desarrollarlo a partir de una referencia inicial mediante iteraciones experimentales hasta cerrar IC50 ~1 ug/mL e IC90 turbidimetrico operativo de 2 ug/mL. La adquisicion DIA definitiva y el analisis proteomico del set biologico control vs EMB aun no comenzaron.
 
 ## Pendientes derivados
 
@@ -96,3 +96,4 @@ No se registraron retrasos ni suspension de actividades respecto al cronograma d
 3. Benchmark TripleSTD: la capa cuantitativa (conteos, medianas, FDR empirico) ya fue recalculada y verificada desde los Excel (`auditoria_triple_std.py`); queda PENDIENTE solo la verificacion ortogonal de la composicion real de la mezcla para cerrar la causa del sesgo de E. coli.
 4. No presentar el flujo de extraccion como optimizado hasta tener evidencia formal.
 5. No presentar adquisicion DIA como iniciada hasta que existan datos crudos DIA.
+6. No presentar el benchmark TripleSTD DDA como resultado oficial ni como resultado comunicado al tutor, salvo decision explicita posterior.
