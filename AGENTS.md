@@ -74,7 +74,7 @@ Objetivo general: caracterizar el impacto proteómico global del EMB en *C. glut
 | OE | Enunciado | Estado |
 |---|---|---|
 | OE1 | Condiciones de exposición subinhibitoria a EMB sin comprometer viabilidad. | COMPLETADO, exploratorio n=2 |
-| OE2 | Implementar y validar estrategia DIA con robustez cuantitativa y cobertura. | NO INICIADO |
+| OE2 | Implementar y validar estrategia DIA con robustez cuantitativa y cobertura. | INICIADO PARCIALMENTE: benchmark DDA previo a DIA |
 | OE3 | Perfiles proteómicos control vs EMB por LC-MS/MS en DIA. | NO INICIADO |
 | OE4 | Proteínas con abundancia significativamente modificada. | NO INICIADO |
 | OE5 | Análisis funcional de las proteínas diferenciales. | NO INICIADO |
@@ -94,7 +94,9 @@ DECISIONES CERRADAS (no reabrir salvo contradicción documentada):
 
 PENDIENTE: fijar la concentración subinhibitoria de tratamiento para OE3; consolidar IC50/IC90 contra los archivos GraphPad Prism de la carpeta. Las decisiones 1 y 2 constan en el prompt maestro; su cita literal contra el protocolo v6 está PENDIENTE.
 
-OE2 a OE6: NO INICIADOS; la adquisición DIA no comenzó. La introducción es borrador preliminar en `redaccion/introduccion/introduccion_borrador_tb_emb_dia.md` (cubre 1.1 y 1.2 parcial); no es texto final.
+OE2: INICIADO PARCIALMENTE como benchmark multiespecie tipo Frey evaluado primero por DDA. Condicion A: 70% WISH/humano, 20% E. coli, 10% S. cerevisiae. Condicion B: 70% WISH/humano, 10% E. coli, 20% S. cerevisiae. Fold changes esperados A/B: humano 1,0; E. coli 2,0; S. cerevisiae 0,5. Esto es puesta a punto cuantitativa previa a DIA, no validacion DIA cerrada. Fuentes: `experimentos/cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md` y `analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md`.
+
+OE3 a OE6: NO INICIADOS; la adquisicion DIA definitiva no comenzo. No hay set biologico definitivo control vs EMB, matriz cuantitativa final, lista de proteinas diferenciales ni analisis funcional del TFDC. La introduccion es borrador preliminar en `redaccion/introduccion/introduccion_borrador_tb_emb_dia.md` (cubre 1.1 y 1.2 parcial); no es texto final.
 
 ## 8. Glosario
 

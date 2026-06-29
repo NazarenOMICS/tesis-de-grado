@@ -20,7 +20,7 @@ La pasantía previa en UBYPA dejó operativo un flujo proteómico completo basad
 
 Fueron exploratorios y no concluyentes el trabajo inicial con DIA (familiarización formativa, sin análisis cuantitativo) y la primera implementación del experimento de perfil térmico del proteoma (TPP), que no mostró precipitación diferencial, con hipótesis principal de interferencia del Triton X-100 del buffer de lisis.
 
-No se retoman en la tesis el experimento de perfil térmico (TPP), el pipeline DDA ni los organismos auxiliares de la pasantía (E. coli, células WISH, S. cerevisiae). La adquisición DIA no fue parte validada de la pasantía: el TFDC la desarrolla de cero (OE2 y OE3). Detalle completo en `pasantia/informe_pasantia_perfil_termico_proteoma.md`.
+No se retoman en la tesis el experimento de perfil térmico (TPP) ni el pipeline DDA de la pasantía como resultado final. La adquisición DIA no fue parte validada de la pasantía: el TFDC la desarrolla de cero (OE2 y OE3). Nota posterior: E. coli, WISH/humano y S. cerevisiae sí se usan en el TFDC como estándar multiespecie de benchmark para OE2, evaluado primero por DDA. Detalle completo en `pasantia/informe_pasantia_perfil_termico_proteoma.md` y `experimentos/cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md`.
 
 ## Hipótesis, objetivo general y objetivos específicos
 
@@ -31,7 +31,7 @@ Objetivo general: explorar la existencia de efectos celulares no descritos previ
 | OE | Enunciado | Estado |
 |---|---|---|
 | OE1 | Establecer condiciones experimentales de exposición subinhibitoria al etambutol sin comprometer significativamente la viabilidad bacteriana. | COMPLETADO (resultado exploratorio, n=2; ver matices) |
-| OE2 | Implementar y validar una estrategia de adquisición proteómica en modo DIA con robustez cuantitativa y cobertura adecuada del proteoma de C. glutamicum. | NO INICIADO |
+| OE2 | Implementar y validar una estrategia de adquisición proteómica en modo DIA con robustez cuantitativa y cobertura adecuada del proteoma de C. glutamicum. | INICIADO PARCIALMENTE: benchmark DDA previo a DIA |
 | OE3 | Obtener perfiles proteómicos de células control y tratadas con EMB mediante LC-MS/MS en modo DIA. | NO INICIADO |
 | OE4 | Determinar, por análisis cuantitativo comparativo, las proteínas con abundancia significativamente modificada tras la exposición al fármaco. | NO INICIADO |
 | OE5 | Realizar análisis funcional de las proteínas diferencialmente abundantes para determinar los procesos celulares afectados. | NO INICIADO |
@@ -55,9 +55,19 @@ Qué queda pendiente en OE1:
 2. Consolidar el análisis frente a los archivos GraphPad Prism presentes en la carpeta (`MIC analisis graphpad.prism`, `MIC OD 600 BHI.prism`): verificar consistencia entre el informe (interpolación + 4PL) y el Prism. Nota: el prompt maestro indicaba que el archivo de IC50 en GraphPad no estaba en la carpeta; hoy hay archivos .prism, cuya correspondencia exacta con el resultado final está pendiente de verificar.
 3. El resultado es exploratorio con n=2 réplicas biológicas; aceptable si se explicita, limitado para incertidumbre formal. No se hizo calibración OD595 vs UFC/mL o peso seco (OD usada como proxy relativo de biomasa).
 
-### OE2 a OE6: NO INICIADO
+### OE2: INICIADO PARCIALMENTE (benchmark DDA previo a DIA)
 
-La adquisición DIA aún no comenzó. No hay datos crudos DIA, ni matriz cuantitativa, ni listas de proteínas diferenciales, ni análisis funcional, ni comparación formal DIA vs DDA. El antecedente DDA del laboratorio (~192 proteínas diferenciales, ~20% del proteoma detectado) es referencia comparativa para OE6, no resultado del TFDC.
+La adquisición DIA definitiva aún no comenzó. Sin embargo, OE2 tuvo avance metodológico preliminar: se preparó y evaluó un estándar multiespecie tipo Frey con WISH/humano, E. coli y S. cerevisiae, primero por DDA, para controlar mezcla, preparación, búsqueda y cuantificación antes de trasladar la lógica a DIA.
+
+Diseño registrado en cuaderno: condición A con 70% humano, 20% E. coli y 10% S. cerevisiae; condición B con 70% humano, 10% E. coli y 20% S. cerevisiae. Los fold changes esperados A/B son 1,0 para humano, 2,0 para E. coli y 0,5 para S. cerevisiae. La preparación se hizo con 1,5 ug finales por mezcla y tres réplicas por condición.
+
+Control de calidad inicial de extractos individuales: E. coli 1508 proteínas, 115436 espectros identificados y 13309 péptidos; S. cerevisiae 1122 proteínas, 89729 espectros y 10929 péptidos; WISH/humano 2297 proteínas, 95165 espectros y 16527 péptidos; FDR <1 en todos. Fuente: `experimentos/cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md`.
+
+Existe un análisis IA preliminar de Pairwise/TFold en `analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md`, pero sus valores deben recalcularse o auditarse contra los Excel antes de integrarlos como resultado final. No hay validación DIA cerrada.
+
+### OE3 a OE6: NO INICIADOS
+
+No hay set biológico definitivo control vs EMB para DIA, ni datos crudos DIA, ni matriz cuantitativa final, ni listas de proteínas diferenciales del TFDC, ni análisis funcional, ni comparación formal DIA vs DDA. El antecedente DDA del laboratorio (~192 proteínas diferenciales, ~20% del proteoma detectado) es referencia comparativa para OE6, no resultado del TFDC.
 
 ## Decisiones experimentales cerradas
 
@@ -88,12 +98,13 @@ El mapeo completo de la introducción a la estructura de bloques 1.1 a 1.8 y su 
 ## Pendientes globales abiertos
 
 1. OE1: fijar la concentración subinhibitoria de tratamiento para OE3; consolidar IC50/IC90 contra los archivos Prism presentes en la carpeta.
-2. OE2 a OE6: no iniciados; la adquisición DIA no ha comenzado.
-3. Redacción: introducción en borrador preliminar; materiales y métodos, resultados, discusión y conclusiones no iniciados en `redaccion/`.
-4. `AGENTS.md`: completado en Fase 7 y revisado a v2.0 como contrato operativo agente-agente.
-5. `bibliografia/INDEX_corpus_obsidian.md`: completado en Fase 8 como indice del corpus Obsidian del TFDC; queda pendiente reforzar bloques 1.6 a 1.8.
-6. Verificación de correspondencia entre el informe metodológico de OE1 y los archivos GraphPad Prism.
+2. OE2: iniciado parcialmente como benchmark DDA previo a DIA; falta auditar Pairwise/TFold contra Excel y trasladar el enfoque a DIA.
+3. OE3 a OE6: no iniciados; la adquisición DIA no ha comenzado.
+4. Redacción: introducción en borrador preliminar; materiales y métodos, resultados, discusión y conclusiones no iniciados en `redaccion/`.
+5. `AGENTS.md`: completado en Fase 7 y revisado a v2.0 como contrato operativo agente-agente.
+6. `bibliografia/INDEX_corpus_obsidian.md`: completado en Fase 8 como indice del corpus Obsidian del TFDC; queda pendiente reforzar bloques 1.6 a 1.8.
+7. Verificación de correspondencia entre el informe metodológico de OE1 y los archivos GraphPad Prism.
 
 ## Fuentes
 
-Anteproyecto (`proyecto/anteproyecto_tfdc_nazareno_cabrera.md`), informe de pasantía (`pasantia/informe_pasantia_perfil_termico_proteoma.md`), informe metodológico final de OE1 (`experimentos/OE1_MIC_IC50/MIC/MIC Final Analisis/informe_metodologico_mic_emb_final.md` y su PDF), protocolo MIC/IC50 v6 (`experimentos/OE1_MIC_IC50/protocolo_mic_ic50_emb_v6.md`), `INDEX.md` y el prompt maestro (`MEGAPROMPT_cowork_base_tesis.md`).
+Anteproyecto (`proyecto/anteproyecto_tfdc_nazareno_cabrera.md`), informe de pasantía (`pasantia/informe_pasantia_perfil_termico_proteoma.md`), informe metodológico final de OE1 (`experimentos/OE1_MIC_IC50/MIC/MIC Final Analisis/informe_metodologico_mic_emb_final.md` y su PDF), protocolo MIC/IC50 v6 (`experimentos/OE1_MIC_IC50/protocolo_mic_ic50_emb_v6.md`), cuaderno de laboratorio resumido (`experimentos/cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md`), resumen operativo TripleSTD (`analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md`), `INDEX.md` y el prompt maestro (`MEGAPROMPT_cowork_base_tesis.md`).

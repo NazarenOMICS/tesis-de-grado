@@ -1,0 +1,243 @@
+Análisis de experimento Three-Species Benchmark
+Proteómica cuantitativa LC-MS/MS DDA — PatternLab for Proteomics
+Corrida 1 Triple STD | Fecha de análisis: 17-04-2026
+Resumen ejecutivo
+El presente documento contiene el análisis cuantitativo completo de un experimento three-species benchmark realizado mediante cromatografía líquida acoplada a espectrometría de masas en tándem en modo de adquisición dependiente de datos (LC-MS/MS DDA). El experimento consiste en mezclas binarias de proteínas de tres organismos en proporciones conocidas y fue procesado con PatternLab for Proteomics aplicando dos estrategias analíticas complementarias: análisis Pairwise a nivel peptídico y análisis TFold a nivel proteína.
+El diseño experimental establece fold changes teóricos exactos entre condición A (70% Homo sapiens / 20% Escherichia coli / 10% Saccharomyces cerevisiae) y condición B (70% / 10% / 20%): FC = 2.0 (log2FC = +1.0) para E. coli, FC = 0.5 (log2FC = −1.0) para Yeast y FC = 1.0 (log2FC = 0) para Human. Este diseño permite cuantificar tanto la sensibilidad del método (capacidad de detectar diferencias reales) como su exactitud cuantitativa (qué tan cerca están los FC estimados de los valores teóricos) y su especificidad (tasa de falsos positivos sobre la fracción Human que debería ser invariante).
+El hallazgo central es una sobreestimación sistemática del fold change de E. coli del orden del 30% en escala lineal (log2FC mediana = +1.376 en Pairwise y +1.626 en TFold-Blue frente al teórico +1.000). El análisis de coherencia interna descarta un error de pipeteo volumétrico como causa y señala hacia un error de concentración del stock de E. coli de aproximadamente 30% sobre el valor nominal. Yeast se comporta con mayor exactitud (desvío de −0.145 log2 en Pairwise). La sensibilidad fue alta para E. coli (91.6% en TFold) y moderada para Yeast (79.2%). El FDR empírico de TFold-Blue fue del 25.3%, considerablemente superior al umbral nominal del 5%, lo que ilustra las limitaciones estructurales del modo DDA para análisis cuantitativo comparativo.
+
+1. Análisis descriptivo de los datos
+1.1 Diseño experimental y valores de referencia
+El three-species benchmark es un estándar metodológico ampliamente utilizado para evaluar el rendimiento de flujos de trabajo de proteómica cuantitativa (Navarro et al., 2016; Röst et al., 2017). Su principio consiste en mezclar proteínas digeridas de tres organismos sin homología significativa entre sí (H. sapiens, E. coli, S. cerevisiae) en dos condiciones con proporciones conocidas pero distintas para dos de los tres organismos, de modo que los fold changes teóricos sean exactamente calculables a partir de las proporciones de la mezcla.
+En el presente experimento, H. sapiens representa el 70% de la masa proteica total en ambas condiciones y actúa como componente invariante (FC = 1.0), proporcionando el conjunto de referencia para estimar el FDR empírico. E. coli está en relación 20:10 (A:B), dando un FC teórico de 2.0x, y S. cerevisiae está en relación 10:20, con un FC teórico de 0.5x. Es importante destacar que 2.0x y 0.5x son fold changes relativamente moderados en el contexto de experimentos biológicos reales, y representan un desafío razonable para cualquier método cuantitativo.
+Desde un punto de vista matemático, el diseño garantiza que cualquier proteína correctamente identificada de E. coli debe tener log2FC > 0 y cualquier proteína de Yeast debe tener log2FC < 0. Una proteína de Human con log2FC ≠ 0 es por definición un falso positivo o refleja variabilidad técnica real del experimento. Esta propiedad del diseño es la que permite calcular el FDR empírico de forma directa a partir de los datos sin necesidad de curvas ROC ni conjuntos de validación externos.
+
+1.2 Dataset Pairwise (nivel peptídico)
+El análisis Pairwise identificó 272 proteínas con diferencias estadísticamente significativas entre condiciones A y B. La distribución por organismo es marcadamente asimétrica: 257 proteínas de E. coli (94.5%), 13 de S. cerevisiae (4.8%) y 1 de H. sapiens (0.4%). Esta asimetría es en parte esperada dado el diseño: E. coli tiene el mayor FC teórico (2x) y, asumiendo cobertura proteómica similar entre organismos, debería resultar en más hits que Yeast (0.5x). Sin embargo, la diferencia de magnitud entre 257 y 13 es llamativamente grande y no puede explicarse solo por el FC: refleja también la mayor facilidad de cuantificación de E. coli en DDA a mayor proporción relativa (20% vs 10% en la condición con mayor representación), así como la diferencia en el número de péptidos únicos por proteína identificados.
+La dirección del fold change fue coherente en el 100% de los casos: todas las proteínas de E. coli presentaron log2FC positivo (FC > 1) y todas las de Yeast log2FC negativo (FC < 1), lo cual es esperado pero no trivial en un experimento con múltiples fuentes de varianza técnica.
+La distribución del log2FC de E. coli (n = 257) es estrecha y unimodal: mediana = +1.376, media = +1.382, SD = 0.212, rango p5–p95 de 1.076–1.729. Esta estrechez (CV del log2FC de ~15%) indica que PatternLab estima los fold changes con alta reproducibilidad entre proteínas dentro de un mismo organismo, lo que es consistente con un método de cuantificación basado en integración de área de pico peptídico con múltiples réplicas. La distribución apretada es también una señal positiva desde el punto de vista del control de calidad: proteínas con mayor o menor abundancia dentro de E. coli son cuantificadas con fold changes similares, lo que indica que no hay sesgo sistemático dependiente de la intensidad de señal dentro de este organismo.
+La distribución del log2FC de Yeast (n = 13) es más dispersa en términos relativos: mediana = −1.145, SD = 0.251, rango −1.777 a −1.006. El menor número de proteínas de Yeast detectadas en Pairwise (13 de ~226 cuantificadas en TFold) es consistente con una menor potencia estadística a nivel peptídico para este organismo: al representar solo el 10% de la mezcla en la condición con menor proporción (condición A), los péptidos de Yeast tienen menor intensidad de señal, lo que eleva el umbral de detección y reduce la significancia estadística de sus diferencias.
+
+1.3 Dataset TFold (nivel proteína)
+El análisis TFold procesó 1921 proteínas en total, distribuidas en 250 de E. coli (13.0%), 226 de Yeast (11.8%) y 1445 de H. sapiens (75.2%). Los parámetros empleados (F-stringency z = 0.01, q-value ≤ 0.05 BH, L-stringency = 0, normalización por señal total) son los reportados por Carvalho et al. (2012) como óptimos para maximizar la sensibilidad manteniendo control de FDR estadístico.
+La distribución en categorías fue: 546 Blue Dots (28.4%), 613 Green Dots (32.0%) y 762 Red Dots (39.7%). Cabe destacar que la categoría Green Dots corresponde a proteínas que superan el umbral estadístico (q ≤ 0.05) pero no el umbral de fold change variable del método TFold. Estas proteínas son estadísticamente significativas pero biológicamente menos confiables, ya que el TFold las penaliza por tener un FC demasiado cercano a 1 en relación con su p-valor, lo que puede indicar falsos positivos estadísticos generados por la alta potencia del test en proteínas con señal muy estable.
+En Blue Dots, la distribución por organismo fue: 229 E. coli (91.6% de las cuantificadas), 179 Yeast (79.2%) y 138 Human (9.6%). La ausencia total de E. coli en Red Dots confirma que el fold change real de este organismo es suficientemente grande como para ser captado por el umbral TFold variable prácticamente en todas las proteínas cuantificadas. En contraste, 15 proteínas de Yeast están en Red Dots, lo que indica que para un pequeño subconjunto de proteínas de este organismo la diferencia de abundancia no fue estadísticamente detectada, ya sea por alta variabilidad técnica o baja señal absoluta.
+
+1.4 Tabla comparativa de estadísticas log2FC
+Tabla 1. Estadísticas descriptivas del log2FC observado versus esperado, por dataset y organismo.
+Dataset
+Organismo
+n
+Med. log2FC
+Media log2FC
+SD
+Esp. log2FC
+Desvío
+Pairwise
+E. coli
+257
++1.376
++1.382
+0.212
++1.000
++0.376
+Pairwise
+Yeast
+13
+-1.145
+-1.226
+0.251
+-1.000
+-0.145
+Pairwise
+Human
+1
+-1.097
+-1.097
+—
+0.000
+-1.097
+TFold-Blue
+E. coli
+229
++1.626
++1.764
+0.485
++1.000
++0.626
+TFold-Blue
+Yeast
+179
+-0.829
+-0.937
+0.453
+-1.000
++0.171
+TFold-Blue
+Human
+138
+-0.252
+-0.220
+0.658
+0.000
+-0.252
+
+
+La mayor dispersión del log2FC en TFold-Blue respecto a Pairwise (SD = 0.485 vs. 0.212 para E. coli; 0.453 vs. 0.251 para Yeast) refleja varios factores concurrentes. En primer lugar, TFold trabaja a nivel proteína integrando una sola estimación de fold change por proteína basada en la señal total, mientras que Pairwise agrega múltiples péptidos por proteína mediante un modelo estadístico, lo que tiende a reducir la varianza. En segundo lugar, TFold incluye proteínas con Count (réplicas cuantificadas) mínimo = 3, que es el piso de lo requerido, mientras que Pairwise filtra implícitamente por número de espectros y péptidos. En tercer lugar, el efecto de la selección estocástica de precursores en DDA introduce variabilidad run-to-run que se manifiesta más en proteínas de baja abundancia, que tienen mayor representación en TFold que en Pairwise.
+Es importante interpretar correctamente la dirección del desvío en Yeast entre métodos: Pairwise da mediana = −1.145 (ligeramente más negativo que −1.000), mientras que TFold-Blue da −0.829 (más atenuado que −1.000). Esta inversión de la dirección del desvío sugiere que los dos métodos tienen distintos sesgos para valores de FC pequeños: Pairwise tiende a sobrestimar ligeramente la diferencia en Yeast (quizás por filtro de los péptidos más diferenciales), mientras que TFold la subestima (consistente con un efecto de regresión hacia la media en proteínas con baja señal o alta varianza).
+
+1.5 Overlap entre Pairwise y TFold-Blue
+Tabla 2. Correspondencia entre el set Pairwise significativo y las categorías TFold.
+Comparación
+Pairwise sig.
+Categoría TFold
+Intersección
+Solo Pairwise
+Pairwise ∩ Blue
+272
+546 (Blue)
+215 (79.0%)
+57 (21.0%)
+Pairwise ∩ Green
+272
+613 (Green)
+12 (4.4%)
+—
+Pairwise ∩ Red
+272
+762 (Red)
+0 (0%)
+—
+
+
+La concordancia del 79.0% entre Pairwise y TFold-Blue (215/272) es alta y confirma que los hits más robustos son detectados de forma consistente por ambos métodos. Las 57 proteínas presentes solo en Pairwise (no en TFold-Blue) incluyen 12 que figuran en TFold-Green, lo que indica que tienen significancia estadística en TFold pero no superan el umbral de fold change variable; este subconjunto podría corresponder a proteínas con fold changes moderados cuya significancia en Pairwise está basada en múltiples péptidos, pero cuyo FC puntual en TFold queda por debajo del umbral. Las 45 proteínas en Pairwise sin ninguna entrada en TFold merecen revisión: podrían ser proteínas identificadas con criterios de identificación distintos entre los dos módulos de PatternLab, o proteínas con cuantificación incompleta en alguna réplica que las excluye de TFold (que requiere mínimo 3 réplicas por condición).
+El hecho de que ninguna proteína del set Pairwise significativo esté en TFold-Red es un resultado de control de calidad positivo: implica que no hay proteínas que Pairwise considera diferenciales pero TFold descarta por no tener p-valor significativo. Toda discrepancia está en la zona intermedia (Green Dots), donde los umbrales de los dos métodos divergen por diseño.
+
+2. Cuantificación y análisis del desvío de E. coli
+2.1 Magnitud y consistencia del desvío
+El fold change observado de E. coli supera el valor teórico en ambos análisis de forma consistente. En Pairwise, la mediana del log2FC es +1.376, equivalente a un FC lineal de 2.595x frente al valor teórico de 2.000x. El desvío absoluto en log2 es +0.376 unidades, lo que representa una sobreestimación del 29.8% en escala lineal. En TFold-Blue, la mediana del log2FC es +1.626, equivalente a un FC lineal de 3.087x, con un desvío de +0.626 log2 (+54.4%). La consistencia del signo y del orden de magnitud entre ambos métodos independientes descarta un artefacto analítico específico de uno de los dos módulos y señala hacia una causa común upstream: la composición real de la muestra.
+Para Yeast, el desvío es considerablemente menor y de magnitud inversa en los dos métodos: −0.145 log2 en Pairwise (FC observado 0.452x vs. teórico 0.500x, −9.5%) y +0.171 log2 en TFold-Blue (FC observado 0.563x, +12.6%). El desvío de Yeast en Pairwise es pequeño y en dirección consistente con una leve sobreestimación del fold change real (Yeast aparece ligeramente más diferencial de lo esperado). En TFold-Blue, el valor −0.829 representa una subestimación del fold change esperado de 0.5x, lo que puede atribuirse a la compresión de fold changes pequeños característica del método cuando la señal es baja o la varianza es alta.
+
+2.2 Análisis de hipótesis sobre el origen del desvío
+Para interpretar el desvío de E. coli correctamente, se consideran cuatro hipótesis no mutuamente excluyentes, que se resumen en la Tabla 3 con sus predicciones contrafácticas.
+Tabla 3. Hipótesis sobre el origen del desvío de E. coli y su compatibilidad con los datos.
+Hipótesis
+Predicción para Yeast (log2FC)
+Observado Yeast (log2FC)
+Compatibilidad
+Error vol. (pipeteo con conservación de masa)
+−2.31 (FC = 0.20x)
+−1.145
+Incompatible (Δ = 1.16 log2)
+Error concentración stock E. coli
+~−1.0 (sin efecto sobre Yeast)
+−1.145
+Compatible
+Sesgo normalización TFold (total signal)
+Offset Human = −0.252 log2
+−0.252 (observado)
+Explica offset Human, no sobreest. E. coli
+Efecto DDA (ruido estocástico)
+Mayor dispersión, no sesgo sistemático
+SD = 0.212 (Pairwise), 0.485 (TFold)
+Contribuye a ampliar desvío en TFold
+
+
+H1: Error de pipeteo con conservación de volumen total
+Si el exceso de E. coli en la condición A fuera consecuencia de un error de pipeteo donde se transfirió un volumen mayor al nominal (por ejemplo, 26 µL en lugar de 20 µL de una alícuota a concentración fija), y si el volumen total de la mezcla se mantuvo constante (lo cual es habitual cuando se trabaja con proporciones predefinidas), entonces el volumen de Yeast en condición A habría sido correspondientemente menor: %Yeast_A = 100 − 70 − 26 = 4%. Esto implicaría un FC lineal para Yeast de 4/20 = 0.20x, es decir, log2FC = −2.31. El valor observado es −1.145, con una diferencia de 1.16 log2 respecto a esta predicción. La hipótesis H1 es, por lo tanto, formalmente incompatible con los datos y puede descartarse.
+Este descarte es cuantitativamente robusto: incluso asumiendo que el error de pipeteo fue más pequeño (por ejemplo, 22 µL en lugar de 20 µL), el Yeast en A sería 8% y su FC esperado 8/20 = 0.40x (log2FC = −1.32), todavía alejado del −1.145 observado. La única forma de reconciliar ambos desvíos bajo conservación de volumen implicaría errores simultáneos y compensatorios en las proporciones de los tres organismos, un escenario muy poco parsimoniosa.
+H2: Error en la concentración del stock de E. coli
+La hipótesis más parsimoniosa y compatible con los datos es que el stock de E. coli empleado para preparar la condición A tenía una concentración real aproximadamente 30% mayor a la estimada por el método de cuantificación empleado (BCA, Bradford, o espectrofotometría UV). En este caso, se pipeteó el volumen nominal correcto (20 µL), pero la masa de proteína transferida fue ~26 µg/µL equivalentes en lugar de 20 µg/µL. Dado que Yeast se prepara de forma independiente de su propio stock, su proporción no se ve afectada, lo que explica que Yeast se comporte cercano al teórico.
+Las fuentes concretas de este tipo de error incluyen: (a) variabilidad intrínseca del método de cuantificación de proteínas: el BCA tiene un CV típico del 5–15% y puede verse afectado por detergentes, reductores y tampones de elución; (b) diferencias en el factor de extinción molar entre organismos: la composición aminoacídica de proteínas bacterianas difiere de la de proteínas humanas o de levadura, afectando la relación absorbancia-concentración en métodos colorimétricos basados en enlace peptídico; (c) variabilidad en la eficiencia de digestión tríptica: si el stock de E. coli tenía una mayor proporción de proteínas bien desplegadas o expuestas a sitios de corte, la eficiencia de digestión podría haber sido mayor, generando más péptidos cuantificables por la misma masa nominal; (d) degradación diferencial del stock entre preparaciones.
+La magnitud del error implicado (~30% en Pairwise) está dentro del rango reportado para variaciones inter-experimento en benchmarks similares. Navarro et al. (2016) reportaron desvíos del fold change de hasta 30–40% respecto al teórico en experimentos DDA con distintos flujos de trabajo, atribuibles en parte a variabilidad de preparación de muestra.
+H3: Sesgo de normalización por señal total
+La normalización por señal total empleada en TFold asume que la suma de señales de todas las proteínas cuantificadas es comparable entre condiciones. Si la condición A contiene más masa de E. coli de lo nominal, su señal total será mayor que en B, y la normalización dividirá las señales de A por un factor mayor, deprimiendo sistemáticamente los FC de todas las proteínas en dirección negativa (menor en A). La evidencia de este efecto es el offset negativo de las proteínas Human en TFold-Blue (mediana = −0.252 log2): si Human fuera perfectamente invariante, su mediana debería ser exactamente 0.
+Sin embargo, este sesgo de normalización no puede explicar por sí solo la sobreestimación de E. coli: si la normalización comprime los FC de A hacia abajo, el FC de E. coli debería quedar por debajo del real, no por encima. La corrección del offset (sumando +0.252 log2 a todos los valores TFold para compensar el sesgo de Human) llevaría la mediana de E. coli a +1.878 log2, aún más alejada del teórico +1.000. Se concluye que la normalización por señal total atenúa parcialmente el desvío de E. coli (en lugar de amplificarlo), y que el desvío residual observado (+0.626 log2) refleja una diferencia real de composición de la muestra.
+H4: Efecto del ruido estocástico en DDA
+La mayor dispersión del log2FC en TFold-Blue (SD = 0.485) respecto a Pairwise (SD = 0.212) para E. coli indica que el ruido estocástico de DDA contribuye a ampliar el rango de los estimados individuales. No obstante, el ruido estocástico en DDA es, en principio, no sesgado: aumenta la varianza pero no desplaza la media sistemáticamente hacia valores más altos. El hecho de que tanto la mediana como la media del log2FC de E. coli sean consistentemente superiores al teórico en ambos métodos (incluido Pairwise, donde la SD es pequeña y la media es +1.382) descarta que el ruido DDA sea la causa primaria del sesgo. La mayor amplitud en TFold puede amplificar el desvío ya existente (proveniente de H2) pero no lo origina.
+
+2.3 Implicancias para el análisis diferencial de las muestras biológicas
+El desvío identificado en E. coli tiene consecuencias directas para la interpretación de los resultados cuantitativos del presente trabajo. En primer lugar, los fold changes absolutos estimados por PatternLab para las muestras biológicas pueden estar afectados por errores similares de preparación de muestra, especialmente si se trabaja con células de diferente composición proteica o diferente estado fisiológico entre condiciones. Esto no invalida la detección de proteínas diferenciales pero sí introduce incertidumbre en la exactitud de los fold changes numéricos.
+En segundo lugar, el comportamiento diferencial entre Pairwise y TFold para la estimación del FC (diferencia de +0.25 log2 entre ambos métodos para el mismo experimento) sugiere que la elección del método de cuantificación puede afectar los FC reportados de forma sistemática, particularmente en proteínas de baja abundancia o con alta varianza inter-réplica. En el contexto del presente trabajo se recomienda priorizar los fold changes del análisis Pairwise para análisis de exactitud cuantitativa, y TFold para análisis de sensibilidad (más candidatos diferenciales) cuando se priorice cobertura sobre exactitud.
+Finalmente, el desvío documenta que el proceso de preparación del estándar externo requiere verificación por cuantificación absoluta (p.ej., ensayo BCA con curva estándar en triplicado y corrección por composición aminoacídica esperada) para reducir el sesgo en futuros experimentos de calibración cuantitativa.
+
+3. Capacidad discriminativa del método
+3.1 Sensibilidad por organismo y por método
+Tabla 4. Sensibilidad y falsos negativos en TFold por organismo.
+Organismo
+Totalcuant.
+Blue
+Green
+Red
+Sensib.(Blue)
+FN(Green+Red)
+E. coli
+250
+229
+21
+0
+91.6%
+21 (8.4%)
+Yeast
+226
+179
+32
+15
+79.2%
+47 (20.8%)
+Human
+1445
+138
+560
+747
+9.6% (FP)
+—
+
+
+TFold alcanzó una sensibilidad del 91.6% para E. coli (229 de 250 proteínas cuantificadas en Blue Dots) y del 79.2% para Yeast (179 de 226). La diferencia de 12.4 puntos porcentuales entre organismos es estadísticamente relevante y refleja fundamentalmente la diferencia en el fold change teórico: un FC de 2x (E. coli) es más fácil de detectar que un FC de 0.5x (Yeast) bajo el mismo nivel de ruido técnico.
+Los 21 falsos negativos de E. coli en TFold (todos en Green Dots) corresponden a proteínas que superan el umbral estadístico (q ≤ 0.05) pero no el umbral de fold change variable TFold. Esto es consistente con un subconjunto de proteínas de E. coli de baja abundancia o alta varianza donde el FC estimado es significativo pero menor a la curva límite del TFold. La ausencia de E. coli en Red Dots confirma que para ninguna proteína cuantificada de este organismo hubo falla estadística total.
+Los 47 falsos negativos de Yeast son cualitativamente distintos: 32 están en Green Dots (FC detectado pero insuficiente según TFold) y 15 en Red Dots (sin evidencia estadística de diferencia). Estas 15 proteínas de Yeast en Red Dots representan el 6.6% del total y corresponden probablemente a proteínas de muy baja abundancia en ambas condiciones, donde la señal DDA es tan esporádica entre réplicas que el test estadístico carece de potencia.
+En el análisis Pairwise, la sensibilidad para Yeast parece aún menor (13 proteínas significativas frente a las ~226 cuantificadas en TFold), pero esto refleja la diferencia en el universo de referencia: Pairwise solo analiza proteínas que superan umbrales de identificación a nivel peptídico más estrictos. Si se restringe la comparación al mismo conjunto de proteínas cuantificadas con confianza en ambos métodos, la concordancia es sustancialmente mayor.
+
+3.2 FDR empírico versus FDR nominal
+El FDR empírico de TFold-Blue es del 25.3% (138 proteínas Human sobre 546 Blue Dots totales), calculado bajo el supuesto de que todas las proteínas de H. sapiens con FC ≠ 1 son falsos positivos. Este valor es cinco veces el FDR nominal declarado por el método (q-value = 0.05, equivalente a 5%). La discrepancia, aunque llamativa, es esperable y tiene una explicación estructural bien documentada.
+El FDR nominal de TFold se calcula a partir del test BH aplicado a los p-valores del t-test entre réplicas de cada proteína individual. Este cálculo asume que los p-valores bajo la hipótesis nula siguen una distribución uniforme, lo que requiere independencia entre réplicas y ausencia de efectos sistemáticos entre corridas (run effects). En experimentos LC-MS/MS DDA, esta suposición es parcialmente violada por: (a) variabilidad de retención cromatográfica entre inyecciones, (b) efectos de supresión de ionización por la matriz de la muestra, (c) missing values diferenciales (péptidos detectados en algunas réplicas pero no en otras), y (d) deriva del instrumento a lo largo de la secuencia de análisis. Estos factores inflan los p-valores de algunas proteínas invariantes más allá de lo esperado bajo independencia, aumentando la tasa de falsos positivos por encima del umbral nominal.
+Las 138 proteínas de Human en Blue Dots tienen una distribución de log2FC con mediana = −0.252, media = −0.220 y rango de −3.001 a +3.245. El 34.1% (47 proteínas) presentan |log2FC| > 0.5 y el 10.1% (14 proteínas) tienen |log2FC| > 1.0. Esta cola extendida indica que no se trata solo de proteínas con pequeñas fluctuaciones estadísticas, sino que un subconjunto de las proteínas Human clasificadas como Blue Dots exhibe variabilidad técnica real de magnitud relevante entre condiciones A y B. Esta variabilidad puede originarse en diferencias sutiles en la eficiencia de digestión, en el tiempo transcurrido entre preparación de muestras, o en efectos de supresión de ionización específicos de cada mezcla.
+En contraste, el análisis Pairwise exhibe un FDR empírico del 0.37% (1 proteína Human de 271 con organismo definido), lo que lo posiciona como un método de mucho mayor especificidad. Esta diferencia radical en especificidad es coherente con el diseño de Pairwise: al integrar múltiples péptidos por proteína y aplicar un test estadístico más conservador, filtra eficazmente la variabilidad técnica que contamina las estimaciones individuales de TFold.
+Estos resultados ilustran un trade-off fundamental en proteómica cuantitativa: TFold maximiza sensibilidad (mayor número de candidatos diferenciales, 546 vs. 272) a expensas de especificidad (FDR empírico 25% vs. 0.4%). La elección del método dependerá de los objetivos del análisis: si se prioriza no perder candidatos biológicamente relevantes (alta sensibilidad, riesgo de FP elevado), TFold es preferible; si se prioriza robustez estadística con baja tasa de falsos positivos, Pairwise es más adecuado.
+
+4. Secciones de tesis
+4.1 Resultados
+Con el objetivo de evaluar la exactitud cuantitativa y la capacidad discriminativa del flujo de trabajo LC-MS/MS DDA implementado, se realizó un experimento three-species benchmark con mezclas en proporciones definidas de proteínas de H. sapiens, E. coli y S. cerevisiae. Los fold changes teóricos esperados entre condición A y condición B son: FC = 2.0 (log2FC = +1.0) para E. coli, FC = 0.5 (log2FC = −1.0) para S. cerevisiae y FC = 1.0 (log2FC = 0) para H. sapiens. Los datos fueron procesados con PatternLab for Proteomics mediante dos estrategias: análisis Pairwise a nivel peptídico y análisis TFold (Carvalho et al., 2012) a nivel proteína.
+El análisis Pairwise identificó 272 proteínas con diferencias estadísticamente significativas, de las cuales 257 correspondieron a E. coli (94.5%, 100% con log2FC positivo), 13 a S. cerevisiae (4.8%, 100% negativas) y 1 a H. sapiens (0.4%). La mediana del log2FC fue +1.376 ± 0.212 (SD) para E. coli y −1.145 ± 0.251 para S. cerevisiae. El FDR empírico calculado sobre la fracción invariante (Human) fue del 0.37% (1/271 proteínas con organismo definido). El análisis TFold cuantificó 1921 proteínas en total e identificó 546 Blue Dots (significativas por fold change variable y q-value), de las cuales 229 correspondieron a E. coli (sensibilidad 91.6%), 179 a Yeast (79.2%) y 138 a H. sapiens (FDR empírico 25.3%). La concordancia entre los dos métodos fue del 79.0% (215 proteínas comunes entre Pairwise y TFold-Blue).
+Respecto a los valores teóricos esperados, E. coli presentó una sobreestimación sistemática del fold change en ambos métodos: log2FC mediana = +1.376 en Pairwise y +1.626 en TFold-Blue frente al teórico +1.000, correspondientes a fold changes lineales de 2.60x y 3.09x respectivamente (desvíos de +29.8% y +54.4%). S. cerevisiae mostró un comportamiento más exacto: log2FC mediana = −1.145 en Pairwise (desvío −0.145 log2 respecto al teórico −1.000) y −0.829 en TFold-Blue (+0.171 log2, subestimación del fold change). La dirección del desvío de Yeast en TFold-Blue (atenuación del fold change) es consistente con el efecto de compresión esperado para fold changes moderados bajo alta varianza técnica.
+El análisis de coherencia interna descartó el error de pipeteo volumétrico con conservación de masa como causa del desvío de E. coli: bajo esa hipótesis, la proporción de Yeast en condición A habría sido del 4% (en lugar del 10% nominal), generando un FC esperado de 0.20x (log2FC = −2.31), incompatible con el −1.145 observado. La hipótesis más consistente es un error de concentración del stock de E. coli de aproximadamente el 30% sobre el valor nominal.
+
+4.2 Discusión
+Los resultados del experimento three-species benchmark permiten evaluar el rendimiento del flujo de trabajo LC-MS/MS DDA en cuatro dimensiones: exactitud cuantitativa, sensibilidad, especificidad y concordancia entre métodos. La correcta discriminación de la dirección del fold change para ambos organismos diferenciales en el 100% de los casos demuestra que el método es capaz de detectar diferencias de abundancia del orden de 2x y 0.5x con alta fiabilidad direccional, lo cual es un resultado favorable para la interpretación cualitativa de los experimentos biológicos del presente trabajo.
+El hallazgo más relevante para el control de calidad experimental es la sobreestimación sistemática del fold change de E. coli. El análisis descarta fuentes instrumentales o analíticas de este desvío: (a) si fuera consecuencia del modo de adquisición DDA, se esperaría mayor varianza pero no sesgo direccional consistente; (b) si fuera consecuencia de la normalización por señal total, el efecto sobre Human indica que el sesgo va en dirección opuesta (deprimiendo los FC de la condición con más señal total, i.e. condición A); (c) la consistencia entre Pairwise y TFold, que son módulos analíticos independientes con distintas lógicas de cuantificación, señala que el sesgo existe en los datos crudos y no es introducido por ninguno de los dos métodos de análisis. La conclusión es que el stock de E. coli usado en condición A estaba aproximadamente un 30% más concentrado que el nominal, lo que se traduce directamente en un FC observado de ~2.6x en lugar del teórico 2x.
+Desde el punto de vista del control de calidad de la preparación de muestra, este resultado ilustra la importancia de la cuantificación precisa de los stocks proteicos en experimentos cuantitativos absolutos. Un error del 30% en concentración es plenamente compatible con la imprecisión típica de métodos colorimétricos (BCA, Bradford) cuando se aplican a extractos de organismos con composición proteica diferente y en presencia de posibles interferentes (detergentes, sales, reductores). La recomendación es implementar cuantificación por LC-MS con estándares marcados isotópicamente (p.ej. QconCAT, PhenoQuan) o al menos verificar las proporciones finales a posteriori usando la mediana del fold change de un subconjunto de proteínas de alta confianza de cada organismo.
+La diferencia de magnitud del desvío entre Pairwise (+0.376 log2) y TFold-Blue (+0.626 log2) tiene también implicancias metodológicas. TFold incluye proteínas con menor cobertura peptídica y mayor varianza individual; como consecuencia, el estimado de fold change por proteína es más ruidoso y en presencia de un sesgo subyacente en la muestra, ese sesgo se amplifica por efecto de la varianza. Este es un mecanismo bien documentado: estimadores con alta varianza exhiben mayor sesgo aparente cuando el valor verdadero se aleja de cero, debido al efecto de amplificación de la varianza sobre la mediana de la distribución (conocido como sesgo de Nickerson o efecto de la varianza sobre estimadores de posición central en distribuciones asimétricas).
+La tasa de falsos positivos empírica en TFold-Blue (25.3%) supera en cinco veces el FDR nominal del 5% y merece análisis detallado. En primer lugar, cabe aclarar que no todas las 138 proteínas Human en Blue Dots son necesariamente falsos positivos en el sentido estadístico estricto: una fracción de ellas puede exhibir variabilidad técnica real entre las réplicas A y B que el test estadístico detecta correctamente, pero que no tiene origen biológico (artefacto de preparación). En segundo lugar, el control de FDR por BH asume independencia entre tests, suposición que es parcialmente violada en LC-MS/MS DDA por correlaciones entre la señal de péptidos co-eluyentes, variación de retención cromatográfica y efectos de run (deriva instrumental entre inyecciones). En tercer lugar, el BH-FDR es un control en expectativa, no una cota por experimento: en una corrida particular puede ser superado por mala suerte estadística. La combinación de estos factores explica el exceso de falsos positivos observado.
+Una limitación estructural del modo DDA que impacta directamente en el FDR empírico es la selección estocástica de precursores: en DDA, los péptidos seleccionados para fragmentación en cada adquisición se determinan por su intensidad en el espectro de survey en tiempo real, lo que genera missing values diferenciales entre réplicas e incluso entre condiciones. Si un péptido de una proteína Human es seleccionado sistemáticamente en más réplicas de la condición A que de B (por ejemplo, porque la coelución con un péptido de E. coli altera la selección del precursor en B), el log2FC estimado para esa proteína estará sesgado aunque la proteína sea perfectamente invariante. Este tipo de artefacto, inherente a DDA, no es corregible por normalización post-hoc y requiere del modo de adquisición DIA para su eliminación.
+La data-independent acquisition (DIA) resuelve este problema de forma elegante: al fragmentar sistemáticamente todos los precursores dentro de ventanas de m/z predefinidas en cada ciclo de adquisición, DIA garantiza la cuantificación de un conjunto reproducible de péptidos en todas las réplicas e independientemente de la complejidad de la muestra en el tiempo de retención dado. Estudios comparativos (Navarro et al., 2016; Röst et al., 2017; Gillet et al., 2012) han demostrado que DIA reduce el FDR empírico en experimentos benchmark entre 3 y 10 veces respecto a DDA, a igual número de réplicas y similar cobertura proteómica. Adicionalmente, DIA tiende a reducir el coeficiente de variación inter-réplica en un 30–50% para proteínas de abundancia intermedia, lo que aumenta la potencia estadística para detectar fold changes de magnitud moderada como el 0.5x de Yeast.
+En el contexto del presente trabajo, los resultados del benchmark indican que los fold changes absolutos reportados por PatternLab pueden estar afectados por variabilidad de preparación de muestra del orden del 20–30% en escala lineal. Esta incertidumbre debe considerarse al interpretar fold changes cuantitativos en los experimentos biológicos, particularmente para proteínas con FC cercano a 1.5x–2x donde el error del método puede representar una fracción no despreciable del efecto observado. La detección de proteínas diferenciales con FC ≥ 2x o ≤ 0.5x (en escala lineal) tiene alta confiabilidad, mientras que proteínas con fold changes más moderados (1.3x–1.8x) deben interpretarse con mayor cautela. La validación de candidatos seleccionados por métodos complementarios (Western blot, ELISA, PRM) sigue siendo la mejor práctica para aquellos con impacto biológico potencial alto.
+
+5. Conclusiones
+Del análisis del experimento three-species benchmark se desprenden las siguientes conclusiones, ordenadas por relevancia para la tesis:
+1. El flujo de trabajo LC-MS/MS DDA implementado discrimina correctamente la dirección de cambio de abundancia proteica. En el 100% de los casos, las proteínas de E. coli (enriquecidas en A) y de S. cerevisiae (enriquecidas en B) fueron asignadas al lado correcto del fold change por ambos métodos de análisis. Esto confirma que el método es cualitativamente fiable para identificar proteínas que aumentan o disminuyen entre condiciones.
+2. La exactitud cuantitativa absoluta está limitada por un error de preparación de muestra del orden del 30%. El fold change observado de E. coli es 2.60x en Pairwise y 3.09x en TFold frente al teórico 2.00x. El análisis de coherencia interna indica que este desvío no es un artefacto analítico sino una consecuencia de una diferencia real de composición de la muestra, más probable por una sobreestimación de la concentración del stock de E. coli (~30% sobre el nominal). Esta limitación tiene impacto directo sobre la interpretación de fold changes absolutos en los experimentos biológicos del presente trabajo.
+3. La sensibilidad es alta para fold changes grandes (2x) y moderada para fold changes pequeños (0.5x). TFold alcanzó 91.6% para E. coli y 79.2% para Yeast. Los falsos negativos de Yeast corresponden predominantemente a proteínas con señal baja o alta varianza inter-réplica, donde el límite de detección del método impide separar el fold change real del ruido técnico.
+4. El FDR empírico de TFold supera en 5x el FDR nominal, lo que es una limitación estructural del modo DDA. La tasa de falsos positivos del 25.3% en TFold-Blue (sobre proteínas Human que deberían ser invariantes) se origina en la selección estocástica de precursores, los missing values diferenciales y los efectos de run inherentes a DDA. El análisis Pairwise, más conservador, exhibe un FDR empírico del 0.37% pero a expensas de menor sensibilidad y menor cobertura de candidatos diferenciales.
+5. Existe un trade-off claro entre sensibilidad y especificidad según el método elegido. TFold maximiza la cobertura de candidatos diferenciales (546 proteínas en Blue Dots) pero con mayor FDR; Pairwise maximiza la especificidad (272 proteínas, FDR 0.37%) a expensas de sensibilidad. En el análisis de los experimentos biológicos del presente trabajo se recomienda utilizar TFold para la identificación de candidatos a validar experimentalmente (priorizando sensibilidad) y Pairwise para la presentación de resultados cuantitativos con alto rigor estadístico.
+6. El modo DIA mitigaría las principales limitaciones observadas. La selección estocástica de precursores en DDA, identificada como la causa central del exceso de FP, quedaría eliminada en DIA al cuantificar sistemáticamente todos los precursores en cada ciclo. Estudios previos reportan reducciones de FDR empírico de 3 a 10 veces y mejoras de reproducibilidad de 30–50% en CV inter-réplica al pasar de DDA a DIA en experimentos benchmark equivalentes. Esta comparación debe considerarse para el diseño de futuras campañas de proteómica cuantitativa en el contexto de este proyecto.
+7. El benchmark valida el experimento pero no lo invalida. Los desvíos cuantitativos documentados son del orden de magnitud habitual para flujos de trabajo DDA y están dentro del rango reportado en la literatura para este tipo de experimentos. La identificación de estas limitaciones es precisamente el objetivo del benchmark y permite ajustar la interpretación de los resultados biológicos con criterio metodológico fundado.
+
+Apéndice: Parámetros del análisis TFold y referencias
+Parámetros TFold (PatternLab for Proteomics, análisis del 17-04-2026):
+F-stringency (z) = 0.01 | q-value BH = 0.05 | L-stringency = 0 | Normalización = Total Signal | Min. réplicas = 6 | Top = Condición A | Bottom = Condición B
+Referencias principales:
+Carvalho PC, Yates JR 3rd, Barbosa VC. Improving the TFold test for differential shotgun proteomics. Bioinformatics. 2012;28(12):1652-1654.
+Navarro P, Kuharev J, Gillet LC, et al. A multicenter study benchmarks software tools for label-free proteome quantification. Nat Biotechnol. 2016;34(11):1130-1136.
+Röst HL, Rosenberger G, Navarro P, et al. OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data. Nat Biotechnol. 2014;32(3):219-223.
+Gillet LC, Navarro P, Tate S, et al. Targeted data extraction of the MS/MS spectra generated by data-independent acquisition: a new concept for consistent and accurate proteome analysis. Mol Cell Proteomics. 2012;11(6):O111.016717.

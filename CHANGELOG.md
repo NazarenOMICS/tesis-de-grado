@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2026-06-29 Actualizacion de estado OE2 desde cuaderno e inbox
+- Incorporados desde `inbox/` la transcripcion contextualizada del cuaderno de laboratorio y el analisis IA preliminar de TripleSTD DDA.
+- Movida la transcripcion completa del cuaderno a `experimentos/legacy/` y creado `experimentos/cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md`.
+- Movido el analisis IA a `analisis/Datos/Corrida 1 Triple STD/legacy/` y creado `analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md`.
+- Corregido `estado_actual_tesis.md`: OE2 ya no figura como no iniciado en sentido absoluto. Queda como iniciado parcialmente mediante benchmark multiespecie DDA previo a DIA; la adquisicion DIA definitiva sigue no iniciada.
+- Actualizados `AGENTS.md` e `INDEX.md` (v2.0) para reflejar el nuevo mapa operativo y advertir que los valores del analisis IA TripleSTD requieren auditoria contra Excel antes de integrarse como resultado final.
+- `inbox/` queda nuevamente solo con `README.md`.
+
 ## 2026-06-29 Fase 8 (corrección de ruta): corpus Obsidian TFDC identificado
 - Reauditada la ruta correcta `C:/Users/Naza/Documents/Obsidian Vault`, luego de descartar previamente la subcarpeta `OBL alimentos/` por corresponder a otro proyecto.
 - Reescrito `bibliografia/INDEX_corpus_obsidian.md` a v2.0 con `estado_integracion: corpus_tfdc_identificado`.

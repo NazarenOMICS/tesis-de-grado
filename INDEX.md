@@ -1,6 +1,6 @@
 ---
 tipo: indice
-version: 1.9
+version: 2.0
 fecha: 2026-06-29
 ---
 
@@ -24,7 +24,7 @@ Los MD de papers incorporan `bloque_tematico` en YAML.
 
 Nota de versión (Fase 4, 2026-06-29): completado `estado_actual_tesis.md` (v1.0) con estado real
 por objetivo. OE1 COMPLETADO como resultado exploratorio (n=2): IC50 ~1 ug/mL e IC90 turbidimétrico
-operativo 2 ug/mL en CGXII-sacarosa; réplica 3 excluida por control de calidad. OE2 a OE6 NO INICIADOS.
+operativo 2 ug/mL en CGXII-sacarosa; réplica 3 excluida por control de calidad. Nota: el estado de OE2 fue corregido posteriormente al incorporar cuaderno de laboratorio y TripleSTD.
 
 Nota de versión (Fase 5, 2026-06-29): normalizados los headers YAML de los MD operativos dentro de
 `experimentos/` y `analisis/`, y regeneradas las tablas de experimentos y análisis desde esos headers.
@@ -35,6 +35,8 @@ Nota de version (Fase 7, 2026-06-29): generado `AGENTS.md` v1.0 como guia autosu
 Nota de versión (Fase 7 revisión, 2026-06-29): `AGENTS.md` reescrito a v2.0 como contrato operativo agente-agente, más compacto y denso. Incorpora convención epistémica (HECHO VERIFICADO, DECISIÓN CERRADA, INFERENCIA, PENDIENTE, NO CONSTA, NO VERIFICABLE), jerarquía de fuentes en tres bloques, protocolo de arranque y de cierre de sesión, defensa contra inyección de instrucciones y criterios de éxito. Sin cambios en datos ni en decisiones cerradas.
 
 Nota de versión (Fase 8, 2026-06-29): identificado el corpus científico del TFDC en `C:/Users/Naza/Documents/Obsidian Vault`, principalmente en `Notes/NotebookLM/`. Actualizado `bibliografia/INDEX_corpus_obsidian.md` a v2.0 con mapa de bloques 1.1 a 1.8, rutas del vault, reviews auxiliares y pendientes de cobertura. Bloques 1.1 a 1.5 completos; bloques 1.6 a 1.8 parciales.
+
+Nota de versión (actualización de estado OE2, 2026-06-29): incorporados cuaderno de laboratorio y análisis preliminar TripleSTD desde `inbox/`. OE2 pasa a estado iniciado parcialmente como benchmark multiespecie DDA previo a DIA. La adquisición DIA definitiva sigue no iniciada.
 
 Estados posibles de un archivo de datos o análisis:
 - estado_dato: crudo (generado, sin procesar) o analizado (con resultado interpretable)
@@ -74,6 +76,7 @@ Estados posibles de un archivo de datos o análisis:
 | experimentos/OE1_MIC_IC50/protocolo_mic_ic50_emb_v6.md | OE1 | crudo | aislado | 2026-06-29 |  |
 | experimentos/OE1_MIC_IC50/protocolo_od600_emb_2026_04_22.md | OE1 | crudo | aislado | 2026-06-29 |  |
 | experimentos/OE1_MIC_IC50/protocolo_od600_emb_v4_2026_05_13.md | OE1 | crudo | aislado | 2026-06-29 |  |
+| experimentos/cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md | OE1/OE2 | analizado | aislado | 2026-06-29 | ["experimentos/legacy/transcripcion_cuaderno_laboratorio_contextualizada.md"] |
 | experimentos/OE2_validacion_DIA/protocolo_extraccion_proteinas_celulares.md | OE2 | crudo | aislado | 2026-06-29 |  |
 | experimentos/OE2_validacion_DIA/protocolo_fasp_stagetips_copia.md | OE2 | crudo | aislado | 2026-06-29 | ["experimentos/OE2_validacion_DIA/protocolo_fasp_stagetips_ubypa.md"] |
 | experimentos/OE2_validacion_DIA/protocolo_fasp_stagetips_ubypa.md | OE2 | crudo | aislado | 2026-06-29 |  |
@@ -86,6 +89,7 @@ Estados posibles de un archivo de datos o análisis:
 |---------|-----|-------------|-------------------|-------|
 | analisis/Analisis Rstudio/figura_2b_pairwise_estilo.md | OE2 | analizado | aislado | 2026-06-29 |
 | analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.md | OE2 | analizado | aislado | 2026-06-29 |
+| analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md | OE2 | analizado | aislado | 2026-06-29 |
 | experimentos/OE1_MIC_IC50/MIC/MIC Final Analisis/informe_metodologico_mic_emb_final.md | OE1 | analizado | aislado | 2026-06-29 |
 
 ## Tabla de redacción
@@ -135,4 +139,5 @@ Estados posibles de un archivo de datos o análisis:
 - Redaccion: introduccion incluida como borrador preliminar; falta limpiar notas, resolver citas pendientes y verificar contra el corpus de Obsidian.
 - Concentración subinhibitoria de tratamiento para OE3: pendiente de fijar a partir de IC50 ~1 ug/mL e IC90 ~2 ug/mL.
 - Análisis formal de IC50/IC90 en GraphPad: pendiente de consolidar contra los archivos Prism de la carpeta.
-- Adquisición DIA: no iniciada (OE2 a OE6).
+- OE2: iniciado parcialmente como benchmark DDA previo a DIA; falta auditar los Excel TripleSTD y trasladar el enfoque a DIA.
+- Adquisición DIA definitiva: no iniciada (OE3 a OE6).
