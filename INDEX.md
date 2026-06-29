@@ -4,60 +4,60 @@ version: 1.4
 fecha: 2026-06-29
 ---
 
-# ?ndice maestro del TFDC
+# Índice maestro del TFDC
 
-## C?mo leer este ?ndice
+## Cómo leer este índice
 
-Este archivo es el punto de entrada ?nico a la base operativa del proyecto.
-Antes de abrir cualquier otro archivo, consult? este ?ndice para saber qu? existe y en qu? estado est?.
+Este archivo es el punto de entrada único a la base operativa del proyecto.
+Antes de abrir cualquier otro archivo, consultá este índice para saber qué existe y en qué estado está.
 
-Las carpetas `legacy/` dentro de cada secci?n contienen PDFs originales que NO se leen
-en operaci?n normal. Solo se abren bajo pedido expl?cito para resolver discrepancias puntuales.
+Las carpetas `legacy/` dentro de cada sección contienen PDFs originales que NO se leen
+en operación normal. Solo se abren bajo pedido explícito para resolver discrepancias puntuales.
 
-Nota de versi?n (Fase 2, 2026-06-29): los seis res?menes MD de `normativa/` fueron reescritos
-en versi?n densa y accionable, verificando contra los PDFs de `normativa/legacy/`. Precedencia normativa:
+Nota de versión (Fase 2, 2026-06-29): los seis resúmenes MD de `normativa/` fueron reescritos
+en versión densa y accionable, verificando contra los PDFs de `normativa/legacy/`. Precedencia normativa:
 el Documento 302-BI prevalece en conflicto, en particular frente al Documento 303-BI.
 
-Nota de versi?n (Fase 3, 2026-06-29): ampliados a versi?n densa los res?menes de pasant?a,
-anteproyecto y bibliograf?a. El anteproyecto contiene hip?tesis, objetivo general, seis OE y cronograma.
+Nota de versión (Fase 3, 2026-06-29): ampliados a versión densa los resúmenes de pasantía,
+anteproyecto y bibliografía. El anteproyecto contiene hipótesis, objetivo general, seis OE y cronograma.
 Los MD de papers incorporan `bloque_tematico` en YAML.
 
-Nota de versi?n (Fase 4, 2026-06-29): completado `estado_actual_tesis.md` (v1.0) con estado real
-por objetivo. OE1 COMPLETADO como resultado exploratorio (n=2): IC50 ~1 ug/mL e IC90 turbidim?trico
-operativo 2 ug/mL en CGXII-sacarosa; r?plica 3 excluida por control de calidad. OE2 a OE6 NO INICIADOS.
+Nota de versión (Fase 4, 2026-06-29): completado `estado_actual_tesis.md` (v1.0) con estado real
+por objetivo. OE1 COMPLETADO como resultado exploratorio (n=2): IC50 ~1 ug/mL e IC90 turbidimétrico
+operativo 2 ug/mL en CGXII-sacarosa; réplica 3 excluida por control de calidad. OE2 a OE6 NO INICIADOS.
 
-Nota de versi?n (Fase 5, 2026-06-29): normalizados los headers YAML de los MD operativos dentro de
-`experimentos/` y `analisis/`, y regeneradas las tablas de experimentos y an?lisis desde esos headers.
-`redaccion/` todav?a no contiene MD operativo con YAML estandarizado.
+Nota de versión (Fase 5, 2026-06-29): normalizados los headers YAML de los MD operativos dentro de
+`experimentos/` y `analisis/`, y regeneradas las tablas de experimentos y análisis desde esos headers.
+`redaccion/` todavía no contiene MD operativo con YAML estandarizado.
 
-Estados posibles de un archivo de datos o an?lisis:
+Estados posibles de un archivo de datos o análisis:
 - estado_dato: crudo (generado, sin procesar) o analizado (con resultado interpretable)
-- estado_integracion: aislado (existe pero no est? en la tesis) o integrado (ya redactado en redaccion/)
+- estado_integracion: aislado (existe pero no está en la tesis) o integrado (ya redactado en redaccion/)
 
 ## Mapa de carpetas
 
-| Carpeta | Contenido | Leer en operaci?n normal |
+| Carpeta | Contenido | Leer en operación normal |
 |---------|-----------|--------------------------|
-| normativa/ | Res?menes MD de normas ORT | S? |
+| normativa/ | Resúmenes MD de normas ORT | Sí |
 | normativa/legacy/ | PDFs regulatorios originales | NO |
-| proyecto/ | Documentos operativos del anteproyecto | S? |
+| proyecto/ | Documentos operativos del anteproyecto | Sí |
 | proyecto/legacy/ | Anteproyecto y formulario original | NO |
-| experimentos/ | Registros de experimentos por OE | S? |
+| experimentos/ | Registros de experimentos por OE | Sí |
 | experimentos/legacy/ | Protocolos generales originales | NO |
-| experimentos/OE1_MIC_IC50/ | Datos, an?lisis e im?genes de OE1 | S? |
+| experimentos/OE1_MIC_IC50/ | Datos, análisis e imágenes de OE1 | Sí |
 | experimentos/OE1_MIC_IC50/legacy/ | Protocolos originales de OE1 | NO |
-| experimentos/OE2_validacion_DIA/ | Validaci?n DIA | S? |
-| experimentos/OE2_validacion_DIA/legacy/ | Protocolos originales del pipeline prote?mico | NO |
-| analisis/ | Salidas analizadas | S? |
-| redaccion/ | Texto de la tesis en desarrollo | S? |
-| bibliografia/ | Res?menes MD de papers y QA | S? |
+| experimentos/OE2_validacion_DIA/ | Validación DIA | Sí |
+| experimentos/OE2_validacion_DIA/legacy/ | Protocolos originales del pipeline proteómico | NO |
+| analisis/ | Salidas analizadas | Sí |
+| redaccion/ | Texto de la tesis en desarrollo | Sí |
+| bibliografia/ | Resúmenes MD de papers y QA | Sí |
 | bibliografia/legacy/ | PDFs de papers originales | NO |
-| pasantia/ | Resumen del informe de pasant?a | S? |
-| pasantia/legacy/ | Informe de pasant?a PDF original | NO |
-| recursos/ | Recursos de soporte t?cnico | S? |
-| recursos/legacy/ | PDFs de soporte t?cnico originales | NO |
-| recursos/scripts/ | Scripts de soporte y an?lisis | S? |
-| recursos/presentaciones/ | Presentaciones del proyecto | S? |
+| pasantia/ | Resumen del informe de pasantía | Sí |
+| pasantia/legacy/ | Informe de pasantía PDF original | NO |
+| recursos/ | Recursos de soporte técnico | Sí |
+| recursos/legacy/ | PDFs de soporte técnico originales | NO |
+| recursos/scripts/ | Scripts de soporte y análisis | Sí |
+| recursos/presentaciones/ | Presentaciones del proyecto | Sí |
 
 ## Tabla de experimentos
 
@@ -73,7 +73,7 @@ Estados posibles de un archivo de datos o an?lisis:
 | experimentos/protocolo_azalea_soluciones_cultivo_proteinas.md | NA | crudo | aislado | 2026-06-29 |  |
 | experimentos/protocolo_crecimiento_corynebacterium.md | NA | crudo | aislado | 2026-06-29 |  |
 
-## Tabla de an?lisis
+## Tabla de análisis
 
 | Archivo | OE | estado_dato | estado_integracion | fecha |
 |---------|-----|-------------|-------------------|-------|
@@ -81,17 +81,17 @@ Estados posibles de un archivo de datos o an?lisis:
 | analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.md | OE2 | analizado | aislado | 2026-06-29 |
 | experimentos/OE1_MIC_IC50/MIC/MIC Final Analisis/informe_metodologico_mic_emb_final.md | OE1 | analizado | aislado | 2026-06-29 |
 
-## Tabla de redacci?n
+## Tabla de redacción
 
-| Secci?n | Estado | Bloques cubiertos |
+| Sección | Estado | Bloques cubiertos |
 |---------|--------|-------------------|
-| introduccion/ | pendiente de normalizar | Hay un TXT de borrador, pero no hay MD operativo con YAML en esta secci?n. |
+| introduccion/ | pendiente de normalizar | Hay un TXT de borrador, pero no hay MD operativo con YAML en esta sección. |
 | materiales_metodos/ | no iniciado | |
 | resultados/ | no iniciado | |
 | discusion/ | no iniciado | |
 | conclusiones/ | no iniciado | |
 
-## Res?menes PDF operativos
+## Resúmenes PDF operativos
 
 | Resumen MD | PDF original |
 |------------|--------------|
@@ -125,7 +125,7 @@ Estados posibles de un archivo de datos o an?lisis:
 
 - AGENTS.md: pendiente (Claude, Fase 7 de su prompt).
 - INDEX_corpus_obsidian.md: pendiente (Claude, Fase 8 de su prompt).
-- Redacci?n: convertir o crear MD operativos con YAML estandarizado cuando empiece cada secci?n.
-- Concentraci?n subinhibitoria de tratamiento para OE3: pendiente de fijar a partir de IC50 ~1 ug/mL e IC90 ~2 ug/mL.
-- An?lisis formal de IC50/IC90 en GraphPad: pendiente de consolidar contra los archivos Prism de la carpeta.
-- Adquisici?n DIA: no iniciada (OE2 a OE6).
+- Redacción: convertir o crear MD operativos con YAML estandarizado cuando empiece cada sección.
+- Concentración subinhibitoria de tratamiento para OE3: pendiente de fijar a partir de IC50 ~1 ug/mL e IC90 ~2 ug/mL.
+- Análisis formal de IC50/IC90 en GraphPad: pendiente de consolidar contra los archivos Prism de la carpeta.
+- Adquisición DIA: no iniciada (OE2 a OE6).

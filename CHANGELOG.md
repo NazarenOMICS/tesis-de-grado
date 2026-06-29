@@ -1,10 +1,10 @@
 # CHANGELOG
 
-## 2026-06-29 Fase 5: metadata operativa e ?ndice maestro
+## 2026-06-29 Fase 5: metadata operativa e índice maestro
 - Normalizados los headers YAML de 12 MD operativos dentro de `experimentos/` y `analisis/` con campos `titulo`, `tipo`, `objetivo`, `estado_dato`, `estado_integracion`, `fecha`, `fuente`, `depende_de` y `notas`.
-- Regenerado `INDEX.md` (v1.4) leyendo los headers YAML para poblar las tablas de experimentos y an?lisis.
-- `redaccion/` queda pendiente de normalizaci?n a MD operativo con YAML cuando se integre texto redactado.
-- No se movieron ni renombraron archivos. No se toc? `.gitignore`.
+- Regenerado `INDEX.md` (v1.4) leyendo los headers YAML para poblar las tablas de experimentos y análisis.
+- `redaccion/` queda pendiente de normalización a MD operativo con YAML cuando se integre texto redactado.
+- No se movieron ni renombraron archivos. No se tocó `.gitignore`.
 
 ## 2026-06-29 Fase 4: estado actual de la tesis
 - Completado `estado_actual_tesis.md` (v1.0) con header YAML, identificación, antecedentes de pasantía, hipótesis, objetivo general, los seis OE en tabla con estado, estado detallado por objetivo, decisiones experimentales cerradas, estado de la introducción por bloques y pendientes globales.
