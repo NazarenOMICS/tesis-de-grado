@@ -83,7 +83,7 @@ Los bloques temáticos identificables a partir de los antecedentes del anteproye
 4. C. glutamicum como modelo no patógeno emparentado con Mycobacteriales. Material de base disponible (anteproyecto).
 5. Proteómica DIA frente a DDA y justificación metodológica. Material de base disponible (anteproyecto, paper Frey 2025).
 
-El mapeo completo de la introducción a la estructura de bloques 1.1 a 1.8 y su corpus de respaldo debe salir del Obsidian vault correcto del TFDC. En Fase 8 se auditó la ruta `C:/Users/Naza/Documents/Obsidian Vault/OBL alimentos`, pero esa ruta corresponde a un proyecto de alimentos/MenoPAUSA y no al corpus científico del TFDC. Por lo tanto, los bloques 1.1 a 1.8 siguen pendientes de verificar contra el vault correcto. Detalle en `bibliografia/INDEX_corpus_obsidian.md`.
+El mapeo completo de la introducción a la estructura de bloques 1.1 a 1.8 y su corpus de respaldo esta indexado en `bibliografia/INDEX_corpus_obsidian.md`. En Fase 8 se identifico el corpus TFDC dentro de `C:/Users/Naza/Documents/Obsidian Vault`, principalmente en `Notes/NotebookLM/`. Los bloques 1.1 a 1.5 tienen carpetas NotebookLM completas; los bloques 1.6 a 1.8 quedan parciales y deben completarse o verificarse con reviews auxiliares, bibliografia versionada y papers fuente.
 
 ## Pendientes globales abiertos
 
@@ -91,7 +91,7 @@ El mapeo completo de la introducción a la estructura de bloques 1.1 a 1.8 y su 
 2. OE2 a OE6: no iniciados; la adquisición DIA no ha comenzado.
 3. Redacción: introducción en borrador preliminar; materiales y métodos, resultados, discusión y conclusiones no iniciados en `redaccion/`.
 4. `AGENTS.md`: completado en Fase 7 y revisado a v2.0 como contrato operativo agente-agente.
-5. `bibliografia/INDEX_corpus_obsidian.md`: creado en Fase 8 como auditoría de ruta no correspondiente; falta localizar el vault correcto del TFDC para verificar bloques 1.1 a 1.8.
+5. `bibliografia/INDEX_corpus_obsidian.md`: completado en Fase 8 como indice del corpus Obsidian del TFDC; queda pendiente reforzar bloques 1.6 a 1.8.
 6. Verificación de correspondencia entre el informe metodológico de OE1 y los archivos GraphPad Prism.
 
 ## Fuentes

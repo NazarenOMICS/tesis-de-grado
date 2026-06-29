@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-06-29 Fase 8 (corrección de ruta): corpus Obsidian TFDC identificado
+- Reauditada la ruta correcta `C:/Users/Naza/Documents/Obsidian Vault`, luego de descartar previamente la subcarpeta `OBL alimentos/` por corresponder a otro proyecto.
+- Reescrito `bibliografia/INDEX_corpus_obsidian.md` a v2.0 con `estado_integracion: corpus_tfdc_identificado`.
+- Indexados los bloques NotebookLM 1.1 a 1.5: tuberculosis, resistencia, Mycobacteriales/envoltura, C. glutamicum como modelo y mecanismo de accion del etambutol.
+- Marcados los bloques 1.6 a 1.8 como PARCIALES: vacios del mecanismo de EMB y efectos proteomicos mas amplios, proteomica global, y DDA frente a DIA. Se registraron rutas auxiliares en dashboards, reviews y bibliografia versionada.
+- Actualizados `INDEX.md` (v1.9) y `estado_actual_tesis.md` para reflejar que el corpus correcto fue localizado. El vault externo sigue sin modificarse ni copiarse.
+
 ## 2026-06-29 Fase 8: auditoria de ruta Obsidian
 - Creado `bibliografia/INDEX_corpus_obsidian.md` como indice de auditoria de la ruta `C:/Users/Naza/Documents/Obsidian Vault/OBL alimentos`.
 - Resultado: la ruta auditada corresponde a un proyecto de alimentos/MenoPAUSA, no al corpus cientifico del TFDC. No se integro contenido de ese vault como fuente cientifica de la tesis.

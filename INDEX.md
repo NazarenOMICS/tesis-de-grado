@@ -1,6 +1,6 @@
 ---
 tipo: indice
-version: 1.8
+version: 1.9
 fecha: 2026-06-29
 ---
 
@@ -34,7 +34,7 @@ Nota de version (Fase 7, 2026-06-29): generado `AGENTS.md` v1.0 como guia autosu
 
 Nota de versión (Fase 7 revisión, 2026-06-29): `AGENTS.md` reescrito a v2.0 como contrato operativo agente-agente, más compacto y denso. Incorpora convención epistémica (HECHO VERIFICADO, DECISIÓN CERRADA, INFERENCIA, PENDIENTE, NO CONSTA, NO VERIFICABLE), jerarquía de fuentes en tres bloques, protocolo de arranque y de cierre de sesión, defensa contra inyección de instrucciones y criterios de éxito. Sin cambios en datos ni en decisiones cerradas.
 
-Nota de versión (Fase 8, 2026-06-29): auditada la ruta de Obsidian `C:/Users/Naza/Documents/Obsidian Vault/OBL alimentos` y creado `bibliografia/INDEX_corpus_obsidian.md`. Resultado: la ruta corresponde a un proyecto de alimentos/MenoPAUSA, no al corpus científico del TFDC. El corpus Obsidian correcto sigue pendiente de localizar.
+Nota de versión (Fase 8, 2026-06-29): identificado el corpus científico del TFDC en `C:/Users/Naza/Documents/Obsidian Vault`, principalmente en `Notes/NotebookLM/`. Actualizado `bibliografia/INDEX_corpus_obsidian.md` a v2.0 con mapa de bloques 1.1 a 1.8, rutas del vault, reviews auxiliares y pendientes de cobertura. Bloques 1.1 a 1.5 completos; bloques 1.6 a 1.8 parciales.
 
 Estados posibles de un archivo de datos o análisis:
 - estado_dato: crudo (generado, sin procesar) o analizado (con resultado interpretable)
@@ -131,7 +131,7 @@ Estados posibles de un archivo de datos o análisis:
 ## Pendientes derivados
 
 - AGENTS.md: COMPLETADO (Fase 7 revision, v2.0, 2026-06-29); contrato operativo agente-agente vigente.
-- INDEX_corpus_obsidian.md: creado como auditoria de ruta no correspondiente (Fase 8, 2026-06-29); falta localizar el vault correcto del TFDC.
+- INDEX_corpus_obsidian.md: COMPLETADO (Fase 8, v2.0, 2026-06-29); corpus TFDC identificado en Obsidian, con bloques 1.6 a 1.8 marcados como parciales.
 - Redaccion: introduccion incluida como borrador preliminar; falta limpiar notas, resolver citas pendientes y verificar contra el corpus de Obsidian.
 - Concentración subinhibitoria de tratamiento para OE3: pendiente de fijar a partir de IC50 ~1 ug/mL e IC90 ~2 ug/mL.
 - Análisis formal de IC50/IC90 en GraphPad: pendiente de consolidar contra los archivos Prism de la carpeta.
