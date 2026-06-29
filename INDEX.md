@@ -1,6 +1,6 @@
 ---
 tipo: indice
-version: 1.2
+version: 1.3
 fecha: 2026-06-29
 ---
 
@@ -28,6 +28,11 @@ como insumo directo de la Fase 4. La pasantía distingue qué quedó validado, q
 y qué no se retoma, y deja explícito que la adquisición DIA no fue parte validada de la pasantía.
 Los MD de papers incorporan `bloque_tematico` en YAML. El PDF de Frey 2025 y su copia
 `copia_setup` son idénticos (mismo md5); el resumen principal es `frey2025_dia_cqe_lfq.md`.
+
+Nota de versión (Fase 4, 2026-06-29): completado `estado_actual_tesis.md` (v1.0) con estado real
+por objetivo. OE1 COMPLETADO como resultado exploratorio (n=2): IC50 ~1 µg/mL e IC90 turbidimétrico
+operativo 2 µg/mL en CGXII-sacarosa (no MIC clásica); réplica 3 excluida por control de calidad.
+OE2 a OE6 NO INICIADOS; la adquisición DIA no comenzó. Introducción NO INICIADA en `redaccion/`.
 
 Estados posibles de un archivo de datos o análisis:
 - estado_dato: crudo (generado, sin procesar) o analizado (con resultado interpretable)
@@ -112,8 +117,10 @@ Estados posibles de un archivo de datos o análisis:
 
 ## Pendientes derivados
 
-- estado_actual_tesis.md: pendiente de completar (Fase 4), con insumos ya disponibles en el anteproyecto y la pasantía ampliados.
+- estado_actual_tesis.md: COMPLETADO (Fase 4, v1.0, 2026-06-29).
 - AGENTS.md: pendiente (Claude, Fase 7 de su prompt).
 - INDEX_corpus_obsidian.md: pendiente (Claude, Fase 8 de su prompt).
-- Análisis formal de IC50/MIC en GraphPad: pendiente de consolidar contra los archivos Prism.
-- Adquisición DIA: no iniciada.
+- Tablas de experimentos y análisis del INDEX: pendientes de poblar con metadata YAML (Fase 5).
+- Concentración subinhibitoria de tratamiento para OE3: pendiente de fijar a partir de IC50 ~1 µg/mL e IC90 ~2 µg/mL.
+- Análisis formal de IC50/IC90 en GraphPad: pendiente de consolidar contra los archivos Prism de la carpeta.
+- Adquisición DIA: no iniciada (OE2 a OE6).
