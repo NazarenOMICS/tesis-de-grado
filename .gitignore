@@ -1,5 +1,4 @@
-# PDFs pesados en carpetas legacy: no van al control de versiones
-**/legacy/
+# PDFs y fuentes originales en legacy se versionan para portabilidad entre computadoras
 
 # Archivos temporales y del sistema
 .DS_Store
