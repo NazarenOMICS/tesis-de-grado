@@ -102,4 +102,18 @@ Estados posibles de un archivo de datos o análisis:
 | experimentos/OE1_MIC_IC50/protocolo_od600_emb_2026_04_22.md | experimentos/OE1_MIC_IC50/legacy/protocolo_od600_emb_2026_04_22.pdf |
 | experimentos/OE1_MIC_IC50/protocolo_od600_emb_v4_2026_05_13.md | experimentos/OE1_MIC_IC50/legacy/protocolo_od600_emb_v4_2026_05_13.pdf |
 | experimentos/OE1_MIC_IC50/MIC/MIC Final Analisis/informe_metodologico_mic_emb_final.md | experimentos/OE1_MIC_IC50/MIC/MIC Final Analisis/informe_metodologico_mic_emb_final.pdf |
-| expe
+| experimentos/OE2_validacion_DIA/protocolo_fasp_stagetips_ubypa.md | experimentos/OE2_validacion_DIA/legacy/protocolo_fasp_stagetips_ubypa.pdf |
+| experimentos/OE2_validacion_DIA/protocolo_extraccion_proteinas_celulares.md | experimentos/OE2_validacion_DIA/legacy/protocolo_extraccion_proteinas_celulares.pdf |
+| experimentos/OE2_validacion_DIA/protocolo_fasp_stagetips_copia.md | experimentos/OE2_validacion_DIA/legacy/protocolo_fasp_stagetips_copia.pdf |
+| recursos/tutorial_patternlab_v.md | recursos/legacy/tutorial_patternlab_v.pdf |
+| recursos/obligatorio_bioinformatica_1.md | recursos/legacy/obligatorio_bioinformatica_1.pdf |
+| analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.md | analisis/Analisis Rstudio/figura_2b_replica_norm_mediana.pdf |
+| analisis/Analisis Rstudio/figura_2b_pairwise_estilo.md | analisis/Analisis Rstudio/figura_2b_pairwise_estilo.pdf |
+
+## Pendientes derivados
+
+- estado_actual_tesis.md: pendiente de completar (Fase 4), con insumos ya disponibles en el anteproyecto y la pasantía ampliados.
+- AGENTS.md: pendiente (Claude, Fase 7 de su prompt).
+- INDEX_corpus_obsidian.md: pendiente (Claude, Fase 8 de su prompt).
+- Análisis formal de IC50/MIC en GraphPad: pendiente de consolidar contra los archivos Prism.
+- Adquisición DIA: no iniciada.
