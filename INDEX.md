@@ -1,6 +1,6 @@
 ---
 tipo: indice
-version: 1.4
+version: 1.5
 fecha: 2026-06-29
 ---
 

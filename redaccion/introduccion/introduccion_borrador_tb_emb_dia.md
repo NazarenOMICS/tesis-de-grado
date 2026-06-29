@@ -1,3 +1,28 @@
+---
+titulo: "Borrador de introduccion, tuberculosis, resistencia y etambutol"
+tipo: redaccion
+objetivo: NA
+estado_dato: analizado
+estado_integracion: aislado
+fecha: "2026-06-29"
+fuente: "redaccion/introduccion/introduccion hasta el dia de hoy.txt"
+depende_de: []
+notas: "Borrador preliminar pegado por el estudiante; contiene prosa inicial, esquema de continuidad y notas de chequeo de citas. Requiere limpieza, verificacion contra corpus y conversion a seccion final."
+version: "0.1"
+bloques_cubiertos: ["1.1", "1.2 parcial"]
+---
+
+# Borrador de introduccion, tuberculosis, resistencia y etambutol
+
+> Estado operativo: borrador preliminar. Este texto queda incluido en la base para trabajo posterior, pero no debe tratarse como redaccion final ni como fuente verificable. Las afirmaciones bibliograficas deben contrastarse contra el corpus de Obsidian en Fase 8.
+
+## Observaciones de auditoria
+
+- Hay al menos una cita pendiente marcada como `[cita pendiente]`.
+- Hay una linea duplicada o descartable sobre MDR-TB antes de la version corregida de ese mismo parrafo.
+- Despues del bloque sobre etambutol hay esquema de continuidad y notas de chequeo de citas mezcladas con la prosa.
+- El texto debe limpiarse y contrastarse contra el corpus bibliografico antes de pasar a redaccion final.
+
 Introducción:
 1.1
 

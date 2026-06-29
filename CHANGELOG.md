@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-06-29 Integración de borrador de introducción
+- Incluido el texto pegado por el estudiante como `redaccion/introduccion/introduccion_borrador_tb_emb_dia.md`, con YAML operativo y estado de borrador preliminar.
+- Corregido de forma mecánica un guion largo y marcado un placeholder de cita pendiente dentro del MD operativo.
+- Actualizado `INDEX.md` (v1.5) para registrar la introducción como borrador preliminar, no como redacción final.
+- Se conserva el TXT original como fuente local del borrador.
+
 ## 2026-06-29 Fase 5: metadata operativa e índice maestro
 - Normalizados los headers YAML de 12 MD operativos dentro de `experimentos/` y `analisis/` con campos `titulo`, `tipo`, `objetivo`, `estado_dato`, `estado_integracion`, `fecha`, `fuente`, `depende_de` y `notas`.
 - Regenerado `INDEX.md` (v1.4) leyendo los headers YAML para poblar las tablas de experimentos y análisis.
