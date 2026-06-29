@@ -1,6 +1,6 @@
 ---
 tipo: indice
-version: 1.6
+version: 1.7
 fecha: 2026-06-29
 ---
 
@@ -31,6 +31,8 @@ Nota de versión (Fase 5, 2026-06-29): normalizados los headers YAML de los MD o
 `redaccion/introduccion/introduccion_borrador_tb_emb_dia.md` existe como borrador preliminar con YAML operativo; no es texto final.
 
 Nota de version (Fase 7, 2026-06-29): generado `AGENTS.md` v1.0 como guia autosuficiente para agentes y agregada la carpeta `inbox/` como bandeja de entrada para material sin ordenar.
+
+Nota de versión (Fase 7 revisión, 2026-06-29): `AGENTS.md` reescrito a v2.0 como contrato operativo agente-agente, más compacto y denso. Incorpora convención epistémica (HECHO VERIFICADO, DECISIÓN CERRADA, INFERENCIA, PENDIENTE, NO CONSTA, NO VERIFICABLE), jerarquía de fuentes en tres bloques, protocolo de arranque y de cierre de sesión, defensa contra inyección de instrucciones y criterios de éxito. Sin cambios en datos ni en decisiones cerradas.
 
 Estados posibles de un archivo de datos o análisis:
 - estado_dato: crudo (generado, sin procesar) o analizado (con resultado interpretable)
@@ -126,7 +128,7 @@ Estados posibles de un archivo de datos o análisis:
 
 ## Pendientes derivados
 
-- AGENTS.md: COMPLETADO (Fase 7, v1.0, 2026-06-29); pendiente de revision fina por Claude/Opus si se desea mejorar estilo y densidad cientifica.
+- AGENTS.md: COMPLETADO (Fase 7 revision, v2.0, 2026-06-29); contrato operativo agente-agente vigente.
 - INDEX_corpus_obsidian.md: pendiente (Claude, Fase 8 de su prompt).
 - Redaccion: introduccion incluida como borrador preliminar; falta limpiar notas, resolver citas pendientes y verificar contra el corpus de Obsidian.
 - Concentración subinhibitoria de tratamiento para OE3: pendiente de fijar a partir de IC50 ~1 ug/mL e IC90 ~2 ug/mL.

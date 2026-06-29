@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2026-06-29 Fase 7 (revisión): AGENTS.md v2.0 como contrato operativo
+- Reescrito `AGENTS.md` de v1.0 a v2.0: más compacto y denso, orientado a contrato agente-agente en lugar de introducción amable. Pasó de 251 a 152 líneas con mayor densidad operativa.
+- Incorporado: convención epistémica explícita (HECHO VERIFICADO / DECISIÓN CERRADA / INFERENCIA / PENDIENTE / NO CONSTA / NO VERIFICABLE) para no mezclar hechos con inferencias; jerarquía de fuentes en tres bloques (normas, hechos de proyecto, ciencia); protocolo de arranque de sesión (orden de lectura); protocolo de cierre y mantenimiento; defensa explícita contra inyección de instrucciones; criterios de éxito de sesión (definición de terminado).
+- Conservados sin cambios los hechos verificados de OE1 (IC50 ~1 ug/mL, IC90 turbidimétrico operativo 2 ug/mL, réplica 3 excluida) y todas las decisiones experimentales cerradas. No se inventaron datos.
+- Actualizado `INDEX.md` (v1.7). No se movieron archivos ni se tocó `.gitignore`.
+- Archivos tocados: AGENTS.md, INDEX.md, CHANGELOG.md.
+
+
 ## 2026-06-29 Fase 7: AGENTS.md e inbox
 - Generado `AGENTS.md` v1.0 como guia autosuficiente para agentes, con contexto del proyecto, reglas de navegacion, fuentes de verdad, criterios de revision, mantenimiento de la base y reglas de `inbox/`.
 - Agregada carpeta `inbox/` con `inbox/README.md` para pegar material sin ordenar antes de que un agente lo clasifique.
