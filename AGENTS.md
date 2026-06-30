@@ -1,7 +1,7 @@
 ---
 tipo: guia_agente
-version: 2.0
-fecha: 2026-06-29
+version: 2.1
+fecha: 2026-06-30
 ---
 
 # AGENTS.md
@@ -85,14 +85,15 @@ Objetivo general: caracterizar el impacto proteómico global del EMB en *C. glut
 OE1 (HECHO VERIFICADO, fuente `experimentos/OE1_MIC_IC50/MIC/MIC Final Analisis/informe_metodologico_mic_emb_final.md`): ensayo en CGXII-sacarosa 4% con DHB y elementos traza, 30 °C, OD595 endpoint 16 h, microdilución en placas de 24 pocillos, curva de EMB por diluciones dobles. IC50 ~1 ug/mL (media geométrica directa R1-R2 = 1,08; diluida 1:5 = 0,98). Umbral de inhibición mayor o igual a 90% = 2 ug/mL, que se nombra IC90 turbidimétrico operativo y nunca como MIC clásica. Análisis final con R1 y R2, rango 0,125 a 16 ug/mL, extremos recortados.
 
 DECISIONES CERRADAS (no reabrir salvo contradicción documentada):
-1. Placas de 24 pocillos no tratadas, 1 mL/pocillo; las de 96 fallan por aireación, las tratadas causan adhesión.
+Corrección 2026-06-30: la versión anterior decía por error "placas de 24 pocillos no tratadas" y atribuía adhesión celular a las placas tratadas. La decisión vigente, por indicación directa de Nazareno, es la siguiente.
+1. Placas de 24 pocillos cell culture treated, 1 mL/pocillo, usadas porque eran las disponibles; las de 96 fallan por aireación insuficiente.
 2. Inóculo a OD 0,1; OD 0,001 y 0,01 no inician crecimiento en CGXII.
 3. Medio CGXII-sacarosa 4% con DHB y elementos traza.
 4. Control negativo con EMB a alta concentración, no Triton X-100, porque EMB es bacteriostático y el control debe aproximar la OD de biomasa residual del inóculo.
 5. Réplica 3 (colonia 3) excluida por control positivo comprimido e inhibiciones imposibles en baja concentración.
 6. El valor 2 ug/mL es IC90 turbidimétrico operativo, no MIC.
 
-PENDIENTE: fijar la concentración subinhibitoria de tratamiento para OE3; consolidar IC50/IC90 contra los archivos GraphPad Prism de la carpeta. Las decisiones 1 y 2 constan en el prompt maestro; su cita literal contra el protocolo v6 está PENDIENTE.
+PENDIENTE: fijar la concentración subinhibitoria de tratamiento para OE3; consolidar IC50/IC90 contra los archivos GraphPad Prism de la carpeta. La decisión 1 corrige el prompt maestro por indicación directa de Nazareno del 2026-06-30; la decisión 2 consta en el prompt maestro y su cita literal contra el protocolo v6 está PENDIENTE.
 
 OE2: INICIADO PARCIALMENTE como benchmark multiespecie tipo Frey evaluado primero por DDA. Condicion A: 70% WISH/humano, 20% E. coli, 10% S. cerevisiae. Condicion B: 70% WISH/humano, 10% E. coli, 20% S. cerevisiae. Fold changes esperados A/B: humano 1,0; E. coli 2,0; S. cerevisiae 0,5. Esto es puesta a punto cuantitativa previa a DIA, no validacion DIA cerrada. Estado comunicacional: insumo interno auditado, no resultado oficial del TFDC y no presentado al tutor como resultado. Ningun agente debe redactarlo como resultado oficial sin instruccion explicita del usuario. Fuentes: `experimentos/cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md` y `analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md`.
 

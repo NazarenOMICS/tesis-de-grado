@@ -1,7 +1,7 @@
 ---
 tipo: estado_actual
-version: 1.0
-fecha: 2026-06-29
+version: 1.1
+fecha: 2026-06-30
 ---
 
 # Estado actual del TFDC
@@ -75,7 +75,9 @@ No hay set biológico definitivo control vs EMB para DIA, ni datos crudos DIA, n
 
 Estas decisiones están tomadas y registradas; no se reabren salvo inconsistencia concreta o pedido del estudiante.
 
-1. Formato de placa: placas de 24 pocillos no tratadas, 1 mL por pocillo. Las de 96 pocillos fallan por aireación insuficiente a las velocidades de agitación disponibles; las tratadas causan adhesión celular. (Fuente: decisiones registradas en el prompt maestro; pendiente de cruzar con protocolo v6 para la cita literal.)
+Corrección 2026-06-30: la versión previa de esta base decía erróneamente "placas de 24 pocillos no tratadas" y justificaba que las placas tratadas causaban adhesión celular. Esa afirmación queda invalidada por indicación directa de Nazareno: las placas usadas eran cell culture treated porque eran las disponibles.
+
+1. Formato de placa: placas de 24 pocillos cell culture treated, 1 mL por pocillo, usadas porque eran las disponibles. Las placas de 96 pocillos quedan descartadas para este ensayo por aireación insuficiente a las velocidades de agitación disponibles. (Fuente: indicación directa de Nazareno, 2026-06-30; reemplaza la decisión errónea registrada en el prompt maestro.)
 2. Inóculo de trabajo a OD 0,1. OD 0,001 y 0,01 no inician crecimiento detectable en CGXII. (Fuente: decisiones registradas en el prompt maestro.)
 3. Medio CGXII con elementos traza y DHB como componentes necesarios para crecimiento confiable; ensayo final en CGXII-sacarosa 4%.
 4. Control negativo del ensayo con EMB a alta concentración (1024 µg/mL) en lugar de Triton X-100, porque EMB es bacteriostático y no lítico: el control negativo debe aproximar la OD de la biomasa residual del inóculo, no un cero óptico. El control negativo blanco-restado fue ~0,16 en directa, compatible con biomasa residual.
@@ -103,7 +105,7 @@ El mapeo completo de la introducción a la estructura de bloques 1.1 a 1.8 y su 
 2. OE2: iniciado parcialmente como benchmark DDA previo a DIA. La auditoría cuantitativa de Pairwise/TFold contra los Excel ya está hecha y verificada (`auditoria_triple_std.py`) para uso interno; no es resultado oficial ni fue presentado al tutor como tal. Queda pendiente la verificación ortogonal de la composición de la mezcla para cerrar la causa del sesgo de E. coli, y trasladar el enfoque a DIA.
 3. OE3 a OE6: no iniciados; la adquisición DIA no ha comenzado, no fue analizada y no fue presentada como resultado.
 4. Redacción: introducción en borrador preliminar; materiales y métodos, resultados, discusión y conclusiones no iniciados en `redaccion/`.
-5. `AGENTS.md`: completado en Fase 7 y revisado a v2.0 como contrato operativo agente-agente.
+5. `AGENTS.md`: completado en Fase 7, revisado a v2.0 como contrato operativo agente-agente y actualizado a v2.1 el 2026-06-30 para corregir la decisión de plataforma de placas de OE1.
 6. `bibliografia/INDEX_corpus_obsidian.md`: completado en Fase 8 como indice del corpus Obsidian del TFDC; queda pendiente reforzar bloques 1.6 a 1.8.
 7. Verificación de correspondencia entre el informe metodológico de OE1 y los archivos GraphPad Prism.
 

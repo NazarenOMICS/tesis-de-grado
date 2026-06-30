@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-06-30 Correccion de decision OE1 sobre tipo de placa
+- Corregida una afirmacion erronea generada en la base operativa: ya no queda como decision vigente que el ensayo OE1 uso placas de 24 pocillos no tratadas ni que las placas tratadas causaban adhesion celular.
+- Decision vigente: placas de 24 pocillos cell culture treated, 1 mL/pocillo, usadas porque eran las disponibles; las placas de 96 pocillos quedan descartadas por aireacion insuficiente a las velocidades de agitacion disponibles.
+- Actualizados `estado_actual_tesis.md`, `AGENTS.md`, `MEGAPROMPT_cowork_base_tesis.md` e `INDEX.md` para que futuros agentes no propaguen la version incorrecta.
+- Fuente de la correccion: indicacion directa de Nazareno en sesion del 2026-06-30.
+
 ## 2026-06-29 Marcado comunicacional de TripleSTD y DIA
 - Aclarado en `estado_actual_tesis.md`, `AGENTS.md`, `INDEX.md`, `experimentos/cuaderno_laboratorio_mar_jun_2026_resumen_operativo.md` y `analisis/Datos/Corrida 1 Triple STD/benchmark_triple_std_dda_resumen_operativo.md` que el benchmark TripleSTD DDA es insumo interno auditado, no resultado oficial del TFDC y no fue presentado al tutor como resultado.
 - Reforzado que la adquisición DIA definitiva no comenzó, no fue analizada y no fue presentada como resultado. El informe oficial recomendado omite el benchmark TripleSTD salvo decisión explícita posterior.
