@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-06-30 Sincronizacion obligatoria antes de trabajar
+- Reemplazado el contenido local de `C:\Users\Administrator\Documents\Tesis de Grado` por el repositorio `https://github.com/NazarenOMICS/tesis-de-grado`, usando `main` como rama vigente.
+- Agregada en `AGENTS.md` la regla de sincronizacion obligatoria con GitHub antes de leer, analizar, editar o responder sobre el proyecto.
+- La regla exige `git fetch --prune origin`, chequeo de estado y `git pull --ff-only` cuando la copia local este detras de `origin/main` y no haya cambios locales que bloqueen la actualizacion.
+- Renumeradas las secciones posteriores de `AGENTS.md` y corregidas referencias internas para evitar ambiguedades.
+- Actualizados `AGENTS.md` e `INDEX.md` a v2.2.
+
 ## 2026-06-30 Correccion de decision OE1 sobre tipo de placa
 - Corregida una afirmacion erronea generada en la base operativa: ya no queda como decision vigente que el ensayo OE1 uso placas de 24 pocillos no tratadas ni que las placas tratadas causaban adhesion celular.
 - Decision vigente: placas de 24 pocillos cell culture treated, 1 mL/pocillo, usadas porque eran las disponibles; las placas de 96 pocillos quedan descartadas por aireacion insuficiente a las velocidades de agitacion disponibles.

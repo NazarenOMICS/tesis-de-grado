@@ -1,6 +1,6 @@
 ---
 tipo: indice
-version: 2.1
+version: 2.2
 fecha: 2026-06-30
 ---
 
@@ -41,6 +41,8 @@ Nota de versión (actualización de estado OE2, 2026-06-29): incorporados cuader
 Nota de versión (auditoría TripleSTD, 2026-06-29): el análisis cuantitativo del benchmark (Pairwise y TFold) fue recalculado desde los Excel con `analisis/Datos/Corrida 1 Triple STD/auditoria_triple_std.py` y reproduce las métricas del análisis IA previo. La capa de conteos, medianas y FDR empírico queda verificada (HECHO VERIFICADO); las causas del sesgo de E. coli siguen como inferencia. Sigue siendo avance interno de OE2 por DDA, no validación DIA, no resultado oficial del TFDC y no presentado al tutor como resultado.
 
 Nota de versión (corrección OE1, 2026-06-30): corregida la decisión de plataforma de placas. La decisión vigente es placas de 24 pocillos cell culture treated, 1 mL/pocillo, usadas porque eran las disponibles; las placas de 96 pocillos quedan descartadas por aireación insuficiente. Queda invalidada la formulación previa que decía "placas no tratadas" y atribuía adhesión celular a las placas tratadas.
+
+Nota de version (sincronizacion GitHub, 2026-06-30): `AGENTS.md` actualizado a v2.2 con una regla obligatoria de sincronizacion antes de trabajar. El agente debe ejecutar `git fetch --prune origin`, verificar el estado Git y hacer `git pull --ff-only` si la copia local esta detras de `origin/main` y no hay cambios locales que bloqueen la actualizacion.
 
 Estados posibles de un archivo de datos o análisis:
 - estado_dato: crudo (generado, sin procesar) o analizado (con resultado interpretable)
@@ -138,7 +140,7 @@ Estados posibles de un archivo de datos o análisis:
 
 ## Pendientes derivados
 
-- AGENTS.md: COMPLETADO (Fase 7 revision, v2.0, 2026-06-29; correccion OE1 v2.1, 2026-06-30); contrato operativo agente-agente vigente.
+- AGENTS.md: COMPLETADO (Fase 7 revision, v2.0, 2026-06-29; correccion OE1 v2.1, 2026-06-30; sincronizacion GitHub v2.2, 2026-06-30); contrato operativo agente-agente vigente.
 - INDEX_corpus_obsidian.md: COMPLETADO (Fase 8, v2.0, 2026-06-29); corpus TFDC identificado en Obsidian, con bloques 1.6 a 1.8 marcados como parciales.
 - Redaccion: introduccion incluida como borrador preliminar; falta limpiar notas, resolver citas pendientes y verificar contra el corpus de Obsidian.
 - Concentración subinhibitoria de tratamiento para OE3: pendiente de fijar a partir de IC50 ~1 ug/mL e IC90 ~2 ug/mL.
